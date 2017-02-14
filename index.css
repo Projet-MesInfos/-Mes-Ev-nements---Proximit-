@@ -1,1 +1,42 @@
+body {
+  margin: 0;
+  text-align: center;
+  background-color: #E3E0DF;
+}
 
+/*header*/
+
+h2 {
+  font-family: 'Grand Hotel', cursive;
+  padding-left: 15px;
+  color: #414141;
+  background-color: rgba(50, 235, 4, 0.5);
+  padding: 15px;
+}
+
+header {
+  display: inline;
+  margin: 10px;
+}
+
+.logo {
+  height: 90px;
+  width: 90px;
+  margin-top: -87px;
+  border-radius: 3px solid #BBBDBF;
+  float: right;
+  margin-right: 15px;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+.search-areas{
+  float: left;
+}
+
+.area{
+  display: inline;
+  font-weight: bold;
+}
