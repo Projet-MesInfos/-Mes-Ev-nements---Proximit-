@@ -12,6 +12,7 @@ h2 {
   color: #414141;
   background-color: rgba(50, 235, 4, 0.5);
   padding: 15px;
+  color: white;
 }
 
 header {
@@ -24,8 +25,8 @@ header {
   width: 90px;
   margin-top: -87px;
   border-radius: 3px solid #BBBDBF;
-  float: right;
-  margin-right: 15px;
+  float: left;
+  margin-left: 15px;
 }
 
 p {
@@ -39,4 +40,15 @@ p {
 .area{
   display: inline;
   font-weight: bold;
+}
+
+button{
+  border-radius: 50px;
+  border: none;
+  background-color: #E3E0DF;
+}
+
+button:hover {
+  background-color: #8AE671;
+  color: white;
 }
