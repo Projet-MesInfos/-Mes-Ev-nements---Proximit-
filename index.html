@@ -9,14 +9,16 @@
     <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 
   </head>
-    <body>
+    <body class="body">
       <!-- header -->
-      <header class="row-xs-4">
+      <header class="row-xs-4 header">
         <div class="header">
-            <h2>Mes événements à proximité</h2>
-            <img class="logo" src="icon.svg"/>
+            <h2 class = "titreMesEvent">Mes événements à proximité</h2>
+            <!-- <img class="logo" src="icon.svg"/> -->
         </div>
       </header>
       <!-- /header -->
@@ -26,9 +28,19 @@
             <input class="area" type="text" name="Place" value="">
           <p class="area">Genre:</p>
             <input class="area" type="text" name="Type" value="">
-            <button type="button" name="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            <button class="boutonSerche"type="button" name="button"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
      <!-- /search area -->
+
+
+     <h2 class="titreIleDeFrance">Les Concerts en Île-de-France</h2>
+         <div class="div-button">
+             <button id="btn" class="list-events" type="button" name="button"><h4>Liste des <strong>Concerts</strong></h4></button>
+         </div>
+
+         <!-- Data js -->
+
+           <div class="links"></div>
 
 
     <script src="index.js">

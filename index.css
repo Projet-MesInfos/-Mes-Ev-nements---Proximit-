@@ -1,54 +1,107 @@
-body {
-  margin: 0;
-  text-align: center;
-  background-color: #E3E0DF;
+.body {
+    margin: 0;
+    text-align: center;
+    background-color: #E3E0DF;
 }
+
 
 /*header*/
 
-h2 {
-  font-family: 'Grand Hotel', cursive;
-  padding-left: 15px;
-  color: #414141;
-  background-color: rgba(50, 235, 4, 0.5);
-  padding: 15px;
-  color: white;
+.titreMesEvent {
+    font-family: 'Grand Hotel', cursive;
+    padding-left: 15px;
+    color: #414141;
+    background-color: rgb(15, 22, 112);
+    padding: 15px;
+    color: white;
+    font-size: 4em;
 }
 
-header {
-  display: inline;
-  margin: 10px;
+.titreIleDeFrance {
+    background-color: rgb(15, 22, 112);
+    font-family: serif;
+    color: white;
+    margin-top: 5%;
+    font-size: 2.5em;
+    width: 400px;
 }
 
-.logo {
-  height: 90px;
-  width: 90px;
-  margin-top: -87px;
-  border-radius: 3px solid #BBBDBF;
-  float: left;
-  margin-left: 15px;
+.div-button {
+    margin-left: -25%;
+    margin-top: -4.9%;
+}
+
+.list-events {
+    border-radius: 100%;
+    width: 15%;
+    height: 55px;
+    color: white;
+    background-color: rgb(133, 21, 21);
+}
+
+.links {
+    margin: 20px;
+    margin-top: 30px;
+    background-color: white;
 }
 
 p {
-  font-family: 'Lato', sans-serif;
+    display: flex;
+    text-align: left;
 }
 
-.search-areas{
-  float: left;
+a {
+    display: flex;
+    text-align: left;
 }
 
-.area{
-  display: inline;
-  font-weight: bold;
+h1 {
+    display: flex;
+    text-align: left;
 }
 
-button{
-  border-radius: 50px;
-  border: none;
-  background-color: #E3E0DF;
+h3 {
+    display: flex;
+    text-align: left;
+    background-color: rgb(3, 2, 10);
+    font-size: 3em;
+    color: white;
 }
 
-button:hover {
-  background-color: #8AE671;
-  color: white;
+img {
+    display: flex;
+    text-align: left;
+}
+
+.header {
+    display: inline;
+    margin: 10px;
+}
+
+.logo {
+    height: 90px;
+    width: 90px;
+    margin-top: -99px;
+    border-radius: 3px solid #BBBDBF;
+    float: left;
+    margin-left: 15px;
+}
+
+.area {
+    font-family: 'Lato', sans-serif;
+}
+
+.search-areas {
+    float: left;
+}
+
+.area {
+    display: inline;
+    font-weight: bold;
+}
+
+.boutonSerche {
+    border-radius: 50px;
+    border: none;
+    background-color: #E3E0DF;
 }
