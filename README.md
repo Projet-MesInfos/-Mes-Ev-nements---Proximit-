@@ -1,6 +1,6 @@
 # Mes-Evnements-a-Proximite
 
-    link: file:///home/simplonco/monsiteweb/soutiengit/Mes-Evenements-a-Proximite/index.html
+    link: https://projet-mesinfos.github.io/Mes-Evenements-a-Proximite/.
 
 Les consignes pour la premiere etape:
 
