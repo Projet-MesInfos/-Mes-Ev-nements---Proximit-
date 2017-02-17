@@ -1,6 +1,7 @@
 # Mes-Evnements-a-Proximite
 
-    link: https://projet-mesinfos.github.io/Mes-Evenements-a-Proximite/.
+Le lien enline:
+https://projet-mesinfos.github.io/Mes-Evenements-a-Proximite/
 
 Les consignes pour la premiere etape:
 
