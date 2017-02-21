@@ -22,6 +22,19 @@ p{
   margin: 25px;
 }
 
+.event{
+  border: none;
+  background-color: rgba(55, 250, 25, 0.5);
+  padding: 10px;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+.event:hover{
+  color: white;
+}
+
 input{
   border: none;
 }
