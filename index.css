@@ -1,87 +1,45 @@
-.body {
-    margin: 0;
-    text-align: center;
-    background-color: #E3E0DF;
+body{
+  text-align: center;
+  margin: 0 auto;
+  background-color: #EBEBEB;
 }
 
-
-/*header*/
-
-.titreMesEvent {
-    font-family: 'Grand Hotel', cursive;
-    padding-left: 15px;
-    color: #414141;
-    background-color: rgb(15, 22, 112);
-    padding: 15px;
-    color: white;
-    font-size: 4em;
+h2{
+  font-family: 'Grand Hotel', cursive;
+  background-color: rgba(55, 250, 25, 0.5);
+  padding: 15px;
+  margin: 0 auto;
+  color: white;
 }
 
-.titreIleDeFrance {
-    background-color: rgb(15, 22, 112);
-    font-family: serif;
-    color: white;
-    margin-top: 5%;
-    font-size: 2.5em;
-    width: 400px;
+p{
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
 }
 
-.div-button {
-    margin-left: -25%;
-    margin-top: -4.9%;
+.area{
+  display: inline;
+  margin: 25px;
 }
 
-.list-events {
-    border-radius: 100%;
-    width: 15%;
-    height: 55px;
-    color: white;
-    background-color: rgb(133, 21, 21);
+input{
+  border: none;
 }
 
-.links {
-    margin: 20px;
-    margin-top: 30px;
-    background-color: white;
+.search-button{
+  border: none;
+  background-color: #EBEBEB;
+  border-radius: 50px;
 }
 
-
-h3 {
-    background-color: rgb(3, 2, 10);
-    font-size: 3em;
-    color: white;
+.search-button:hover{
+  background-color: #37FA19;
+  color: white;
 }
 
-
-.header {
-    display: inline;
-    margin: 10px;
-}
-
-.logo {
-    height: 90px;
-    width: 90px;
-    margin-top: -99px;
-    border-radius: 3px solid #BBBDBF;
-    float: left;
-    margin-left: 15px;
-}
-
-.area {
-    font-family: 'Lato', sans-serif;
-}
-
-.search-areas {
-    float: left;
-}
-
-.area {
-    display: inline;
-    font-weight: bold;
-}
-
-.boutonSerche {
-    border-radius: 50px;
-    border: none;
-    background-color: #E3E0DF;
-}
+/*.logo {
+  height: 80px;
+  width: 80px;
+  float: left;
+  margin-bottom: 77px;
+}*/
