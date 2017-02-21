@@ -46,7 +46,7 @@ input{
 }
 
 .search-button:hover{
-  background-color: #37FA19;
+  background-color: rgba(55, 250, 25, 0.5);
   color: white;
 }
 
