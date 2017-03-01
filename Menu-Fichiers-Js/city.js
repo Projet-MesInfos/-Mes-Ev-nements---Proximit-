@@ -3,6 +3,7 @@ $(document).ready(function() {
     var divContainer = $("#DivDomApi");
 
 // le lien d'api
+// la filtrages des villes
 
     $("#cityLyon").on("click", function() {
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lyon%22%2C%20%222017%22%20%22mars%22%20&rows=20&start=4&pretty=false&timezone=UTC", function(json) {

@@ -11,7 +11,6 @@ body {
     text-align: center;
 }
 
-
 .navbar-inner {
     margin-left: 320px;
     margin-top: 8px;
@@ -25,39 +24,22 @@ body {
     background-color: #1A1A1A;
 }
 
-#formInput{
-  margin-top: 3%;
+#formInput {
+    margin-top: 3%;
 }
+
 #inputChercher {
-  margin-left: 38%;
-width: 350px;
-height: 25px;
+    margin-left: 38%;
+    width: 350px;
+    height: 25px;
     z-index: 100;
-    margin-top: -0.5%;
+    margin-top: -0.4%;
 }
 
 .glyphicon-search {
     margin-left: -2%;
     z-index: 222;
     color: rgb(66, 133, 244);
-}
-
-
-/*#buttonChercher{
-  margin-top: -0.1%;
-    margin-right: -14%;
-}*/
-
-.verticolabs {
-    color: white;
-}
-
-.are {
-    color: white;
-}
-
-.boring {
-    color: white;
 }
 
 .linksDrop {
@@ -89,47 +71,51 @@ height: 25px;
     font-family: 'Josefin Sans', sans-serif;
     color: black;
 }
-.apiDivDateStart{
-  display: flex;
-  justify-content: center;
-  margin-left: 23%;
-  margin-top: -25%;
-  margin-bottom: 22%;
-}
-.apiDivDateEnd{
-  display: flex;
-  justify-content: center;
-  margin-left: 23%;
-  margin-top: -22%;
-  margin-bottom: 19%;
-}
-.apiDivAdresse{
-  display: flex;
-  justify-content: center;
-  margin-left: 23%;
-  margin-top: -19%;
-  margin-bottom: 17%;
-}
-.apiDivPrix{
-  display: flex;
-  justify-content: center;
-  margin-left: 23%;
-  margin-top: -17%;
-  margin-bottom: 15%;
+
+.apiDivDateStart {
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
+    margin-top: -25%;
+    margin-bottom: 22%;
 }
 
-.apiDivDescription{
-  display: flex;
-  justify-content: center;
-  margin-left: 23%;
-  margin-top: -15%;
-  margin-bottom: 13%;
+.apiDivDateEnd {
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
+    margin-top: -22%;
+    margin-bottom: 19%;
 }
 
-.creLink{
-  display: flex;
-  justify-content: center;
-  margin-left: 23%;
-  margin-top: -13%;
-  margin-bottom: 12%;
+.apiDivAdresse {
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
+    margin-top: -19%;
+    margin-bottom: 17%;
+}
+
+.apiDivPrix {
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
+    margin-top: -17%;
+    margin-bottom: 15%;
+}
+
+.apiDivDescription {
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
+    margin-top: -15%;
+    margin-bottom: 13%;
+}
+
+.creLink {
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
+    margin-top: -13%;
+    margin-bottom: 12%;
 }

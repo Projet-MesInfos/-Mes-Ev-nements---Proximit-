@@ -3,6 +3,7 @@ $(document).ready(function() {
     var divContainer = $("#DivDomApi");
 
 // le lien d'api
+// la filtrages des evenmeents general
 
     $("#cinemaGeneral").on("click", function() {
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22cin%C3%A9ma%22%2C%20%222017%22%2C%20%22mars%22&rows=20&pretty=false&timezone=UTC", function(json) {

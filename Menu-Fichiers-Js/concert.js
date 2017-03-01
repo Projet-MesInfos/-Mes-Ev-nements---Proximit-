@@ -3,6 +3,7 @@ $(document).ready(function() {
     var divContainer = $("#DivDomApi");
 
 // le lien d'api
+// La filtrage des évenements concertPlus
 
     $("#concertGeneral").on("click", function() {
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22%C3%8Ele-de-France%22%2C%20%22Concert%22%2C%20%222017%22&rows=30&start=24&pretty=false&timezone=UTC", function(json) {
