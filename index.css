@@ -1,87 +1,135 @@
-.body {
+body {
     margin: 0;
-    text-align: center;
-    background-color: #E3E0DF;
+    height: 77vh;
 }
-
-
-/*header*/
 
 .titreMesEvent {
     font-family: 'Grand Hotel', cursive;
-    padding-left: 15px;
-    color: #414141;
-    background-color: rgb(15, 22, 112);
-    padding: 15px;
-    color: white;
+    color: #1F1B4C;
     font-size: 4em;
+    margin-top: 12.5%;
+    text-align: center;
 }
 
-.titreIleDeFrance {
-    background-color: rgb(15, 22, 112);
-    font-family: serif;
+
+.navbar-inner {
+    margin-left: 320px;
+    margin-top: 8px;
+    width: 765px;
+}
+
+#main-nav {
+    z-index: 1000;
+    height: 80px;
+    padding: 14px;
+    background-color: #1A1A1A;
+}
+
+#formInput{
+  margin-top: 3%;
+}
+#inputChercher {
+  margin-left: 38%;
+width: 350px;
+height: 25px;
+    z-index: 100;
+    margin-top: -0.5%;
+}
+
+.glyphicon-search {
+    margin-left: -2%;
+    z-index: 222;
+    color: rgb(66, 133, 244);
+}
+
+
+/*#buttonChercher{
+  margin-top: -0.1%;
+    margin-right: -14%;
+}*/
+
+.verticolabs {
     color: white;
-    margin-top: 5%;
-    font-size: 2.5em;
+}
+
+.are {
+    color: white;
+}
+
+.boring {
+    color: white;
+}
+
+.linksDrop {
+    color: white;
+    font-size: 17px;
+    padding-left: 25px;
+}
+
+#DivDomApi {
+    margin-top: 4%;
+}
+
+.apiImage {
+    margin-left: 30px;
     width: 400px;
+    height: 400px;
 }
 
-.div-button {
-    margin-left: -25%;
-    margin-top: -4.9%;
+.apiDivTitle {
+    display: flex;
+    justify-content: center;
+    margin-top: -26%;
+    margin-bottom: 27%;
+    margin-left: 23%;
 }
 
-.list-events {
-    border-radius: 100%;
-    width: 15%;
-    height: 55px;
-    color: white;
-    background-color: rgb(133, 21, 21);
+.apiTitle {
+    font-size: 33px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: black;
+}
+.apiDivDateStart{
+  display: flex;
+  justify-content: center;
+  margin-left: 23%;
+  margin-top: -25%;
+  margin-bottom: 22%;
+}
+.apiDivDateEnd{
+  display: flex;
+  justify-content: center;
+  margin-left: 23%;
+  margin-top: -22%;
+  margin-bottom: 19%;
+}
+.apiDivAdresse{
+  display: flex;
+  justify-content: center;
+  margin-left: 23%;
+  margin-top: -19%;
+  margin-bottom: 17%;
+}
+.apiDivPrix{
+  display: flex;
+  justify-content: center;
+  margin-left: 23%;
+  margin-top: -17%;
+  margin-bottom: 15%;
 }
 
-.links {
-    margin: 20px;
-    margin-top: 30px;
-    background-color: white;
+.apiDivDescription{
+  display: flex;
+  justify-content: center;
+  margin-left: 23%;
+  margin-top: -15%;
+  margin-bottom: 13%;
 }
 
-
-h3 {
-    background-color: rgb(3, 2, 10);
-    font-size: 3em;
-    color: white;
-}
-
-
-.header {
-    display: inline;
-    margin: 10px;
-}
-
-.logo {
-    height: 90px;
-    width: 90px;
-    margin-top: -99px;
-    border-radius: 3px solid #BBBDBF;
-    float: left;
-    margin-left: 15px;
-}
-
-.area {
-    font-family: 'Lato', sans-serif;
-}
-
-.search-areas {
-    float: left;
-}
-
-.area {
-    display: inline;
-    font-weight: bold;
-}
-
-.boutonSerche {
-    border-radius: 50px;
-    border: none;
-    background-color: #E3E0DF;
+.creLink{
+  display: flex;
+  justify-content: center;
+  margin-left: 23%;
+  margin-top: -13%;
+  margin-bottom: 12%;
 }

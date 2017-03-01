@@ -6,44 +6,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css" media="screen" title="no title">
-    <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <!-- <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"> -->
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="nestednav.css" rel="stylesheet">
+
+<!-- Font google Api -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 
   </head>
-    <body class="body">
-      <!-- header -->
-      <header class="row-xs-4 header">
-        <div class="header">
-            <h2 class = "titreMesEvent">Mes événements à proximité</h2>
-            <!-- <img class="logo" src="icon.svg"/> -->
-        </div>
-      </header>
-      <!-- /header -->
-      <!-- search area -->
-        <div class="search-area">
-          <p class="area">à:</p>
-            <input class="area" type="text" name="Place" value="">
-          <p class="area">Genre:</p>
-            <input class="area" type="text" name="Type" value="">
-            <button class="boutonSerche"type="button" name="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </div>
-     <!-- /search area -->
+    <body>
 
-      
-     <h2 class="titreIleDeFrance">Les Concerts en Île-de-France</h2>
-         <div class="div-button">
-             <button id="btn" class="list-events" type="button" name="button"><h4>Liste des <strong>Concerts</strong></h4></button>
-         </div>
+<div class="containerGlobal">
+      <div id="main-nav" class="navbar navbar-inverse navbar-fixed-top" >
+          <div class="navbar-inner">
+              <div class="container">
+                  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </a>
+                  <!-- <a class="brand"><span class="verticolab">Mes events</span></a> -->
+                  <div class="nav-collapse">
+                      <ul class="nav">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle"><span class="linksDrop">Île-de-France</span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                              <li id="cityLille"><a>Lille</a></li>
+                              <li id="cityBretagne"><a>Bretagne</a></li>
+                                <li id="cityNantes"><a>Nantes</a></li>
+                                  <li id="cityTours"><a>Tours</a></li>
+                                  <li id="cityMontpellier"><a>Montpellier</a></li>
+                                <li id="cityLyon"><a>Lyon</a></li>
+                                <li id="cityMarseille"><a>Marseille</a></li>
+                                <li id="cityBordeaux"><a>Bordeaux</a></li>
+                                <li id="cityNice"><a>Nice</a></li>
+                            </ul>
+                        </li>
 
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle"><span class="linksDrop">Concert</span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a><strong id = concertGeneral>Tout Les Concerts</strong></a></li>
+                                <li class="dropdown-submenu">
+                                    <a data-toggle="dropdown" class="dropdown-toggle"><strong>Prix</strong><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a><strong id="concertGratuit">Gratuit</strong></a></li>
+                                        <li id="concertDixEuro"><a>Entre 10€-20€</a></li>
+                                        <li id="concertVingtEuro"><a>Entre 20€-40€</a></li>
+                                        <li id="concertPlus"><a>Plus</a></li>
+                                    </ul>
+                                </li>
+                                <li id="concertRock"><a>Rock</a></li>
+                                <li id="concertElectro"><a>Electro</a></li>
+                                <li id="concertHouse"><a>House</a></li>
+                                <li id="concertJazz"><a>Jazz</a></li>
+                                <li id="concertFunk"><a>Funk</a></li>
+                                <li id="concertBlues"><a>Blues</a></li>
+                                <li id="concertPop"><a>Pop</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle"><span class="linksDrop">Cinéma</span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li id="cinemaGeneral"><a>Tout les cinemas</a></li>
+                                <li id="cinemaGratuit"><a>Gratuit</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle"><span class="linksDrop">Théâtre</span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li id="theatreGeneral"><a>Tout les théâtre</a></li>
+                                <li id="theatreGratuit"><a>Gratuit</a></li>
+                            </ul>
+                        </li>
+                          <!-- <li><a><span class="linksDrop">Exposition</span></a></li> -->
+                          <li class="dropdown">
+                              <a data-toggle="dropdown" class="dropdown-toggle"><span class="linksDrop">Spectacle</span> <b class="caret"></b></a>
+                              <ul class="dropdown-menu">
+                                  <li id="spectacleGeneral"><a>Tout les spectacles</a></li>
+                                  <li id="spectacleGratuit"><a>Gratuit</a></li>
+                              </ul>
+                          </li>
+
+                          <li class="dropdown">
+                              <a data-toggle="dropdown" class="dropdown-toggle"><span class="linksDrop">Les autres</span><b class="caret"></b></a>
+                              <ul class="dropdown-menu">
+                                  <li class="dropdown-submenu">
+                                      <a data-toggle="dropdown" class="dropdown-toggle">Danse<b class="caret"></b></a>
+                                      <ul class="dropdown-menu">
+                                          <li id="danseGeneral"><a>Tout les Danses</a></li>
+                                          <li id="danseGratuit"><a>Gratuit</a></li>
+
+                                      </ul>
+                                  </li>
+                                  <li class="dropdown-submenu">
+                                      <a data-toggle="dropdown" class="dropdown-toggle">Animation<b class="caret"></b></a>
+                                      <ul class="dropdown-menu">
+                                          <li id="animationGeneral"><a>Tout les Animations</a></li>
+                                          <li id="animationGratuit"><a>Gratuit</a></li>
+
+                                      </ul>
+                                  </li>
+                                  <li class="dropdown-submenu">
+                                      <a data-toggle="dropdown" class="dropdown-toggle">Sport<b class="caret"></b></a>
+                                      <ul class="dropdown-menu">
+                                          <li id="sportGeneral"><a>Tout les Sports</a></li>
+                                          <li id="sportGratuit"><a>Gratuit</a></li>
+
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+
+                      </ul>
+
+
+                  </div>
+
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+
+  <!-- header -->
+  <header class="row-xs-4 header">
+    <div class="header">
+        <h2 class = "titreMesEvent">Mes événements à proximité</h2>
+    </div>
+  </header>
+  <form id = "formInput"class="navbar-form inline-form">
+             <divclass="form-group">
+               <input id="inputChercher" type="search" class="input-sm form-control" placeholder="Mettez votre adresse" >
+                 <span class="glyphicon glyphicon-search"></span>
+             </div>
+           </form>
          <!-- Data js -->
 
-           <div class="links"></div>
+           <div id="DivDomApi"></div>
 
 
-    <script src="index.js">
-    </script>
-  </body>
+
+    <script src = "index.js" type="text/javascript"></script>
+      <script src = "./Menu-Fichiers-Js/concert.js" type="text/javascript"></script>
+      <script src = "./Menu-Fichiers-Js/city.js" type="text/javascript"></script>
+      <script src = "./Menu-Fichiers-Js/general.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="jquery.nestednav.min.js"></script>
+    </body>
 </html>
