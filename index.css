@@ -14,7 +14,7 @@ body {
 .navbar-inner {
     margin-left: 320px;
     margin-top: 8px;
-    width: 765px;
+    /*width: 100%;*/
 }
 
 #main-nav {
@@ -24,7 +24,8 @@ body {
     background-color: #1A1A1A;
 }
 
-#formInput {
+
+/*#formInput {
     margin-top: 3%;
 }
 
@@ -40,6 +41,21 @@ body {
     margin-left: -2%;
     z-index: 222;
     color: rgb(66, 133, 244);
+}*/
+
+/*Barre de recherche */
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+    height: auto;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
 }
 
 .linksDrop {
