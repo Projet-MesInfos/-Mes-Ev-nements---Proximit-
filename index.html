@@ -11,6 +11,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" media="screen">
 
+    <link href="./DownloadMenuFiles/nestednav.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -137,8 +138,8 @@
 
     <!-- header -->
 
-    <header class="row-xs-4 header">
-        <div class="header">
+    <header class="row header">
+        <div class="col-sm-12 header">
             <h2 class="titreMesEvent">Mes événements à proximité</h2>
         </div>
     </header>
@@ -151,6 +152,25 @@
             <span id="iconSearche"class="glyphicon glyphicon-search"></span>
             </div>
     </form>
+
+    <!-- <form id="formInput" class="navbar-form inline-form">
+        <div class="form-group">
+            <input id="inputChercher" type="search" class="input-sm form-control" placeholder="Mettez votre adresse">
+            <span class="glyphicon glyphicon-search"></span>
+        </div>
+    </form> -->
+
+    <!-- Barre de recherche -->
+    <div class="row inputChercher">
+        <div class="col-sm-4 col-sm-offset-4">
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Mettez votre adresse" >
+                    <span class="input-group-addon">
+                        <button type="submit" class="glyphicon glyphicon-search"></button>
+                    </span>
+                </div>
+        </div>
+	</div>
 
 
     <div id="DivDomApi"></div>
@@ -166,6 +186,9 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <script src="./DownloadMenuFiles/jquery.nestednav.min.js"></script>
+
 </body>
 
 </html>

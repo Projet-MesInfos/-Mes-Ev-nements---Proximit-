@@ -14,7 +14,7 @@ body {
 .navbar-inner {
     margin-left: 320px;
     margin-top: 8px;
-    width: 765px;
+    /*width: 100%;*/
 }
 
 #main-nav {
@@ -24,6 +24,7 @@ body {
     background-color: #1A1A1A;
 }
 
+<<<<<<< HEAD
 #divInput{
 display: flex;
 justify-content: center;
@@ -31,6 +32,11 @@ justify-content: center;
 
 #formInput {
     margin-top: 4%;
+=======
+
+/*#formInput {
+    margin-top: 3%;
+>>>>>>> ab00e6562e7b2d2082ae66ad1873c621c5a4fccf
 }
 
 #inputChercher {
@@ -44,6 +50,21 @@ justify-content: center;
     margin-left: -2%;
     z-index: 222;
     color: rgb(66, 133, 244);
+}*/
+
+/*Barre de recherche */
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+    height: auto;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
 }
 
 .linksDrop {
