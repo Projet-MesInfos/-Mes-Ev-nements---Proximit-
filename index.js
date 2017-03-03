@@ -1,4 +1,4 @@
-  $(document).ready(function() {
+$(document).ready(function() {
 
     var divContainer = $("#DivDomApi");
 
@@ -89,4 +89,27 @@
         $(this).find('> .dropdown-menu').stop(true, true).fadeOut(timerOut);
         $(this).removeClass('open');
     });
+
+    var address = null;
+    getAddress().then(function(address) {
+      console.log(address);
+      $('#inputChercher').val(address.formated.replace(/\n/, ' '));
+    });
 });
+
+function getAddress() {
+  // Initialise the cozy sdk.
+  cozy.client.init();
+
+  // create an index, for the Client doctype, on the vendor field.
+  return cozy.client.data.defineIndex('Client', ['vendor'])
+    .then(function(index) {
+      // Query the cozy database, using the previous index, to found the data.
+      return cozy.client.data.query(index, { selector: { vendor: 'EDF' }});
+    })
+    .then(function(data) {
+      // extract the data we need.
+      return data[0].address;
+    })
+    ;
+}
