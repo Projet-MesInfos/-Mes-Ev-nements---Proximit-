@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="nestednav.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -49,7 +49,7 @@
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle"><span class="linksDrop">Concert</span> <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a><strong id = concertGeneral>Tout Les Concerts</strong></a></li>
+                                    <li><a><strong id = "concertGeneral">Tout Les Concerts</strong></a></li>
                                     <li class="dropdown-submenu">
                                         <a data-toggle="dropdown" class="dropdown-toggle"><strong>Prix</strong><b class="caret"></b></a>
                                         <ul class="dropdown-menu">
@@ -146,9 +146,9 @@
    <!-- Form input -->
 
     <form id="formInput" class="navbar-form inline-form">
-        <divclass="form-group">
-            <input id="inputChercher" type="search" class="input-sm form-control" placeholder="Mettez votre adresse">
-            <span class="glyphicon glyphicon-search"></span>
+        <div id = "divInput"class="form-group">
+            <input id="inputChercher" type="search" class="input-sm form-control" placeholder="Rechercher événements" value="">
+            <span id="iconSearche"class="glyphicon glyphicon-search"></span>
             </div>
     </form>
 
@@ -158,13 +158,14 @@
 
 
     <script src="index.js" type="text/javascript"></script>
+    <script src="input.js" type="text/javascript"></script>
+
     <script src="./Menu-Fichiers-Js/concert.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/city.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/general.js" type="text/javascript"></script>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="jquery.nestednav.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,11 @@
+{
+  "name": "Mes-evenements-a-porximite",
+  "cozy-type": "static",
+  "cozy-displayName": "Mes evenements a proximite ",
+  "version": "1.0.0",
+  "description": "Your app's description",
+  "icon-path": "main_icon.png",
+  "cozy-permissions": {
+    "Contacts": "Mes infos"
+  }
+}

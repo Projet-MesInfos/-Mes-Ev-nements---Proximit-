@@ -6,7 +6,7 @@ body {
 .titreMesEvent {
     font-family: 'Grand Hotel', cursive;
     color: #1F1B4C;
-    font-size: 4em;
+    font-size: 4.5em;
     margin-top: 12.5%;
     text-align: center;
 }
@@ -24,16 +24,20 @@ body {
     background-color: #1A1A1A;
 }
 
+#divInput{
+display: flex;
+justify-content: center;
+}
+
 #formInput {
-    margin-top: 3%;
+    margin-top: 4%;
 }
 
 #inputChercher {
-    margin-left: 38%;
     width: 350px;
     height: 25px;
     z-index: 100;
-    margin-top: -0.4%;
+    margin-top: -0.6%;
 }
 
 .glyphicon-search {
@@ -62,14 +66,19 @@ body {
     display: flex;
     justify-content: center;
     margin-top: -26%;
-    margin-bottom: 27%;
+    margin-bottom: 22%;
     margin-left: 23%;
 }
 
 .apiTitle {
+  text-align: center;
     font-size: 33px;
     font-family: 'Josefin Sans', sans-serif;
     color: black;
+    padding-top: 22px;
+    width: 800px;
+    height: 100px;
+    overflow: hidden;
 }
 
 .apiDivDateStart {
@@ -103,19 +112,31 @@ body {
     margin-top: -17%;
     margin-bottom: 15%;
 }
+.apiPrix{
+  width: 800px;
+  height: 20px;
+  overflow: hidden;
+  text-align: center;
+}
 
 .apiDivDescription {
     display: flex;
     justify-content: center;
     margin-left: 23%;
-    margin-top: -15%;
+    margin-top: -14.5%;
     margin-bottom: 13%;
+}
+.apiDescription{
+  width: 800px;
+  height: 50px;
+  overflow: hidden;
+  text-align: center;
 }
 
 .creLink {
     display: flex;
     justify-content: center;
     margin-left: 23%;
-    margin-top: -13%;
-    margin-bottom: 12%;
+    margin-top: -14%;
+    margin-bottom: 8%;
 }

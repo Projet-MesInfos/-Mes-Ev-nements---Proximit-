@@ -51,7 +51,7 @@ $(document).ready(function() {
               divPrix.append(prix);
               divContainer.append(divPrix);
               divPrix.attr("class", "apiDivPrix");
-              adresse.attr("class", "apiPrix");
+              prix.attr("class", "apiPrix");
               prix.append(" " +item.record.fields.pricing_info);
 
               divDescription = $("<div></div>");
@@ -74,7 +74,7 @@ $(document).ready(function() {
     });
 
     $("#concertGratuit").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22gratuit%22&rows=20&start=1&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22gratuit%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -119,7 +119,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -140,7 +140,7 @@ $(document).ready(function() {
     });
 
     $("#concertDixEuro").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2210%E2%82%AC%22&rows=20&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2210%E2%82%AC%22&rows=30&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -185,7 +185,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -207,7 +207,7 @@ $(document).ready(function() {
 
 
     $("#concertVingtEuro").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2220%E2%82%AC%22%2C%2230%E2%82%AC%22&rows=20&start=5&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2220%E2%82%AC%22%2C%2230%E2%82%AC%22&rows=30&start=5&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -252,7 +252,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -273,7 +273,7 @@ $(document).ready(function() {
     });
 
     $("#concertPlus").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2240%E2%82%AC%22&rows=10&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2240%E2%82%AC%22&rows=30&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -318,7 +318,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -339,7 +339,7 @@ $(document).ready(function() {
     });
 
     $("#concertRock").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%20%22mars%22%20%2C%20%22Rock%22&rows=20&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%20%22mars%22%20%2C%20%22Rock%22&rows=30&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -384,7 +384,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -405,7 +405,7 @@ $(document).ready(function() {
     });
 
     $("#concertElectro").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Electro%22&rows=25&start=1&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Electro%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -450,7 +450,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -471,7 +471,7 @@ $(document).ready(function() {
     });
 
     $("#concertHouse").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22House%22&rows=25&start=1&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22House%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -516,7 +516,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -537,7 +537,7 @@ $(document).ready(function() {
     });
 
     $("#concertJazz").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Jazz%22&rows=25&start=2&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Jazz%22&rows=30&start=2&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -582,7 +582,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -603,7 +603,7 @@ $(document).ready(function() {
     });
 
     $("#concertFunk").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Funk%22&rows=20&start=3&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Funk%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -648,7 +648,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -669,7 +669,7 @@ $(document).ready(function() {
     });
 
     $("#concertBlues").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Blues%22&rows=20&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Blues%22&rows=30&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -714,7 +714,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
@@ -735,7 +735,7 @@ $(document).ready(function() {
     });
 
     $("#concertPop").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Pop%22&rows=20&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Pop%22&rows=30&pretty=false&timezone=UTC", function(json) {
 
             json.records.forEach(function(item) {
                 creImg = $("<img/>");
@@ -780,7 +780,7 @@ $(document).ready(function() {
                 divPrix.append(prix);
                 divContainer.append(divPrix);
                 divPrix.attr("class", "apiDivPrix");
-                adresse.attr("class", "apiPrix");
+                prix.attr("class", "apiPrix");
                 prix.append(" " +item.record.fields.pricing_info);
 
                 divDescription = $("<div></div>");
