@@ -12,7 +12,8 @@ body {
 }
 
 .navbar-inner {
-    margin-left: 20%;
+    display: flex;
+    justify-content: center;
     margin-top: 8px;
 }
 
@@ -24,7 +25,6 @@ body {
         margin-top: 82%;
         text-align: center;
     }
-
 }
 
 #main-nav {
