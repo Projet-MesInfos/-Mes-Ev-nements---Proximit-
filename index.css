@@ -12,9 +12,19 @@ body {
 }
 
 .navbar-inner {
-    margin-left: 320px;
+    margin-left: 20%;
     margin-top: 8px;
-    /*width: 100%;*/
+}
+
+@media screen and (max-width: 480px) {
+    .titreMesEvent {
+        font-family: 'Grand Hotel', cursive;
+        color: #1F1B4C;
+        font-size: 2.5em;
+        margin-top: 82%;
+        text-align: center;
+    }
+
 }
 
 #main-nav {
@@ -24,22 +34,16 @@ body {
     background-color: #1A1A1A;
 }
 
-<<<<<<< HEAD
-#divInput{
-display: flex;
-justify-content: center;
+#divInput {
+    display: flex;
+    justify-content: center;
 }
 
 #formInput {
-    margin-top: 4%;
-=======
-
-/*#formInput {
     margin-top: 3%;
->>>>>>> ab00e6562e7b2d2082ae66ad1873c621c5a4fccf
 }
 
-#inputChercher {
+#inputCherche {
     width: 350px;
     height: 25px;
     z-index: 100;
@@ -50,21 +54,25 @@ justify-content: center;
     margin-left: -2%;
     z-index: 222;
     color: rgb(66, 133, 244);
-}*/
+}
+
 
 /*Barre de recherche */
-.stylish-input-group .input-group-addon{
+
+.stylish-input-group .input-group-addon {
     background: white !important;
 }
-.stylish-input-group .form-control{
-	border-right:0;
-	box-shadow:0 0 0;
-	border-color:#ccc;
+
+.stylish-input-group .form-control {
+    border-right: 0;
+    box-shadow: 0 0 0;
+    border-color: #ccc;
     height: auto;
 }
-.stylish-input-group button{
-    border:0;
-    background:transparent;
+
+.stylish-input-group button {
+    border: 0;
+    background: transparent;
 }
 
 .linksDrop {
@@ -78,7 +86,7 @@ justify-content: center;
 }
 
 .apiImage {
-    margin-left: 30px;
+    margin-left: 50px;
     width: 400px;
     height: 400px;
 }
@@ -92,12 +100,12 @@ justify-content: center;
 }
 
 .apiTitle {
-  text-align: center;
+    text-align: center;
     font-size: 33px;
     font-family: 'Josefin Sans', sans-serif;
     color: black;
     padding-top: 22px;
-    width: 800px;
+    width: 70%;
     height: 100px;
     overflow: hidden;
 }
@@ -133,11 +141,12 @@ justify-content: center;
     margin-top: -17%;
     margin-bottom: 15%;
 }
-.apiPrix{
-  width: 800px;
-  height: 20px;
-  overflow: hidden;
-  text-align: center;
+
+.apiPrix {
+    width: 800px;
+    height: 20px;
+    overflow: hidden;
+    text-align: center;
 }
 
 .apiDivDescription {
@@ -147,11 +156,12 @@ justify-content: center;
     margin-top: -14.5%;
     margin-bottom: 13%;
 }
-.apiDescription{
-  width: 800px;
-  height: 50px;
-  overflow: hidden;
-  text-align: center;
+
+.apiDescription {
+    width: 800px;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
 }
 
 .creLink {

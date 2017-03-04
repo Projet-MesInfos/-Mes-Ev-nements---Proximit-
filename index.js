@@ -10,7 +10,7 @@
       var apiT = '&timezone=UTC';
       var input = $("#inputChercher");
 
-      $("#iconSearche").on("click", function() {
+      $("#buttonSearche").on("click", function() {
           var url = apiOpenData + input.val() + row + apiP + apiT;
 
           $.getJSON(url, function(json) {

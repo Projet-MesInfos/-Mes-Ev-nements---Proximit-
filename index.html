@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-
 </head>
 
 <body>
@@ -144,29 +143,13 @@
         </div>
     </header>
 
-   <!-- Form input -->
-
-    <form id="formInput" class="navbar-form inline-form">
-        <div id = "divInput"class="form-group">
-            <input id="inputChercher" type="search" class="input-sm form-control" placeholder="Rechercher événements" value="">
-            <span id="iconSearche"class="glyphicon glyphicon-search"></span>
-            </div>
-    </form>
-
-    <!-- <form id="formInput" class="navbar-form inline-form">
-        <div class="form-group">
-            <input id="inputChercher" type="search" class="input-sm form-control" placeholder="Mettez votre adresse">
-            <span class="glyphicon glyphicon-search"></span>
-        </div>
-    </form> -->
-
     <!-- Barre de recherche -->
-    <div class="row inputChercher">
+    <div id="formInput" class="row inputChercher">
         <div class="col-sm-4 col-sm-offset-4">
                 <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Mettez votre adresse" >
+                    <input id="inputChercher" type="text" class="form-control"  placeholder="Mettez votre adresse" >
                     <span class="input-group-addon">
-                        <button type="submit" class="glyphicon glyphicon-search"></button>
+                        <button id="buttonSearche" type="submit" class="glyphicon glyphicon-search"></button>
                     </span>
                 </div>
         </div>
