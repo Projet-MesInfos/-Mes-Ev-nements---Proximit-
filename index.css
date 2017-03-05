@@ -34,24 +34,23 @@ body {
     background-color: #1A1A1A;
 }
 
-#divInput {
+#formInput {
+    margin-top: 3%;
     display: flex;
     justify-content: center;
 }
 
-#formInput {
-    margin-top: 3%;
-}
-
-#inputCherche {
-    width: 350px;
-    height: 25px;
+#inputChercher {
+    width: 30em;
+    height: 2.3em;
     z-index: 100;
-    margin-top: -0.6%;
+
+}
+#buttonSearche{
+  margin-right: 1.9em;
 }
 
 .glyphicon-search {
-    margin-left: -2%;
     z-index: 222;
     color: rgb(66, 133, 244);
 }
