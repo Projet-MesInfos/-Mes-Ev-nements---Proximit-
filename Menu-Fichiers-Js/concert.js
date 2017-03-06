@@ -69,88 +69,66 @@ var glob = function(json) {
 
 
     $("#concertGeneral").on("click", function() {
-divContainer.empty();
+
+     divContainer.empty();
+
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22%C3%8Ele-de-France%22%2C%20%22Concert%22%2C%20%222017%22&rows=30&start=24&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);        });  });
 
     $("#concertGratuit").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22gratuit%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);      });  });
 
     $("#concertDixEuro").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2210%E2%82%AC%22&rows=30&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);      });  });
 
 
     $("#concertVingtEuro").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2220%E2%82%AC%22%2C%2230%E2%82%AC%22&rows=30&start=5&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);      });  });
 
     $("#concertPlus").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2240%E2%82%AC%22&rows=30&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);      });  });
 
     $("#concertRock").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%20%22mars%22%20%2C%20%22Rock%22&rows=30&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);      });  });
 
     $("#concertElectro").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Electro%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);        });    });
 
     $("#concertHouse").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22House%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);      });  });
 
     $("#concertJazz").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Jazz%22&rows=30&start=2&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);      });  });
 
     $("#concertFunk").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Funk%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);        });  });
 
     $("#concertBlues").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Blues%22&rows=30&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);        });  });
 
     $("#concertPop").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Pop%22&rows=30&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);        });    });
 
 });

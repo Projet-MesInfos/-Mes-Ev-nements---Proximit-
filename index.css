@@ -28,7 +28,7 @@ body {
 }
 
 #main-nav {
-    z-index: 1000;
+    z-index: 1001;
     height: 80px;
     padding: 14px;
     background-color: #1A1A1A;

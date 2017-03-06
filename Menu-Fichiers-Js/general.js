@@ -68,87 +68,65 @@ $(document).ready(function() {
     };
 
     $("#cinemaGeneral").on("click", function() {
+
         divContainer.empty();
+
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22cin%C3%A9ma%22%2C%20%222017%22%2C%20%22mars%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);        });    });
 
     $("#cinemaGratuit").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22cinema%22%2C%20%222017%22%2C%20%22mars%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);        });    });
 
     $("#theatreGeneral").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22th%C3%A9%C3%A2tre%20%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);      });  });
 
     $("#theatreGratuit").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22th%C3%A9%C3%A2tre%20%22%2C%20%222017%22%2C%20%22mars%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);        });    });
 
     $("#spectacleGeneral").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22spectacle%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);        });    });
 
     $("#spectacleGratuit").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22spectacle%22%2C%20%222017%22%2C%20%22mars%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);        });    });
 
     $("#danseGeneral").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22danse%20%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=2&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);        });  });
 
     $("#danseGratuit").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22danse%20%22%2C%20%222017%22%2C%20%22mars%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);      });  });
 
     $("#animationGeneral").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22animation%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);      });  });
 
     $("#animationGratuit").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22animation%22%2C%20%222017%22%2C%20%22mars%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);      });  });
 
     $("#sportGeneral").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22sport%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=2&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);      });  });
 
     $("#sportGratuit").on("click", function() {
         divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22sport%22%2C%20%222017%22%2C%20%22mars%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&start=2&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-        });
-    });
+            glob(json);    });  });
 
 });

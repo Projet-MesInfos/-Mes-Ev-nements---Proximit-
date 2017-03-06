@@ -69,60 +69,46 @@ $(document).ready(function() {
 
 
     $("#cityLyon").on("click", function() {
-divContainer.empty();
+
+      divContainer.empty();
+
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lyon%22%2C%20%222017%22%20%22mars%22%20&rows=30&start=4&pretty=false&timezone=UTC", function(json){
-        glob(json);
-        });
-  });
+        glob(json); }); });
 
     $("#cityLille").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lille%22%2C%20%222017%22%2C%20%22mars%22&rows=30&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-    });
-  });
+          glob(json); }) });
 
     $("#cityBretagne").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Bretagne%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json); }); });
 
     $("#cityMarseille").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Marseille%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json); }); });
 
     $("#cityNantes").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Nantes%22%2C%20%222017%22%2C%20%22mars%22&rows=30&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);  }); });
 
     $("#cityTours").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Tours%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);  });  });
 
     $("#cityMontpellier").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Montpellier%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);  });  });
 
     $("#cityBordeaux").on("click", function() {
       divContainer.empty();
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Bordeaux%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-          glob(json);
-          });
-    });
+          glob(json);      });  });
 
     $("#cityNice").on("click", function() {
       divContainer.empty();
