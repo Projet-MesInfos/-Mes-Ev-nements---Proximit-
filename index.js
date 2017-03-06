@@ -101,6 +101,13 @@ function getAddress() {
   // Initialise the cozy sdk.
   cozy.client.init();
 
+
+  return getMaifAddress()
+    .catch(getEDFAddress);
+}
+
+
+function getEDFAddress() {
   // create an index, for the Client doctype, on the vendor field.
   return cozy.client.data.defineIndex('Client', ['vendor'])
     .then(function(index) {
@@ -108,8 +115,26 @@ function getAddress() {
       return cozy.client.data.query(index, { selector: { vendor: 'EDF' }});
     })
     .then(function(data) {
+      if (data.length === 0) {
+        return Promise.reject(null);
+      }
       // extract the data we need.
       return data[0].address;
+    });
+}
+
+function getMaifAddress() {
+  return cozy.client.data.defineIndex('Maifuser', ['_id'])
+    .then(function(index) {
+      return cozy.client.data.query(index, { selector: { _id: '' }});
     })
-    ;
+    .then(function(data) {
+      if (data.length === 0) {
+        return Promise.reject(null);
+      }
+
+      var address = data[0].profile.MesInfos.foyer.address;
+      address.formated = address.street + '\n' + adress.postcode + ' ' + address.city;
+      return address
+    })
 }
