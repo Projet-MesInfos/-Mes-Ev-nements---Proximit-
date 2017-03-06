@@ -11,11 +11,12 @@
       var input = $("#inputChercher");
 
       $("#buttonSearche").on("click", function() {
+        divContainer.empty();
           var url = apiOpenData + input.val() + row + apiP + apiT;
 
           $.getJSON(url, function(json) {
 
-              json.records.forEach(function(item) {
+                  json.records.forEach(function(item) {
                   creImg = $("<img/>");
                   creHref = creImg.attr("src", item.record.fields.image);
                   apiImage = creImg.attr("class", "apiImage");
