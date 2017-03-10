@@ -11,16 +11,6 @@ body {
     text-align: center;
 }
 
-
-.navbar-inner {
-    margin-left: 20%;
-    margin-top: 8px;
-}
-ul{
-  display: flex;
-  flex-direction: row;
-}
-
 @media screen and (max-width: 480px) {
     .titreMesEvent {
         font-family: 'Grand Hotel', cursive;
@@ -30,6 +20,12 @@ ul{
         text-align: center;
     }
 }
+
+.navbar-inner {
+    margin-left: 20%;
+    margin-top: 8px;
+}
+
 
 #main-nav {
     z-index: 1001;
