@@ -72,7 +72,7 @@ $(document).ready(function() {
 
       divContainer.empty();
 
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lyon%22%2C%20%222017%22%20%22mars%22%20&rows=30&start=4&pretty=false&timezone=UTC", function(json){
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lyon%22%2C%20%222017%22%20%22mars%22%20&rows=30&start=9&pretty=false&timezone=UTC", function(json){
         glob(json); }); });
 
     $("#cityLille").on("click", function() {

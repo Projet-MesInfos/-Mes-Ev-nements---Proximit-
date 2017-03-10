@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    height: 100vh;
+    height: 80vh;
 }
 
 .titreMesEvent {
@@ -23,14 +23,14 @@ body {
 
 .navbar-inner {
     margin-left: 20%;
-    margin-top: 8px;
+    margin-top: 0.8%;
 }
 
 
 #main-nav {
     z-index: 1001;
-    height: 80px;
-    padding: 14px;
+    height: 11%;
+    padding: 1%;
     background-color: #1A1A1A;
 }
 
@@ -41,13 +41,13 @@ body {
 }
 
 #inputChercher {
-    width: 30em;
+    width: 29%;
     height: 2.3em;
     z-index: 100;
 
 }
 #buttonSearche{
-  margin-right: 1.9em;
+  margin-left: -2.9em;
 }
 
 .glyphicon-search {
@@ -77,7 +77,7 @@ body {
 .linksDrop {
     color: white;
     font-size: 17px;
-    padding-left: 25px;
+    padding-left: 1.4em;
 }
 
 #DivDomApi {
@@ -85,9 +85,9 @@ body {
 }
 
 .apiImage {
-    margin-left: 50px;
-    width: 400px;
-    height: 400px;
+    margin-left: 3%;
+    width: 29em;
+    height: 29em;
 }
 
 .apiDivTitle {
@@ -103,8 +103,8 @@ body {
     font-size: 33px;
     font-family: 'Josefin Sans', sans-serif;
     color: black;
-    padding-top: 22px;
-    width: 70%;
+    padding-top: 0.3em;
+    width: 68%;
     height: 100px;
     overflow: hidden;
 }
@@ -142,7 +142,7 @@ body {
 }
 
 .apiPrix {
-    width: 800px;
+    width: 50%;
     height: 20px;
     overflow: hidden;
     text-align: center;
@@ -157,7 +157,7 @@ body {
 }
 
 .apiDescription {
-    width: 800px;
+    width: 70%;
     height: 50px;
     overflow: hidden;
     text-align: center;
