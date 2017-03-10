@@ -1,8 +1,11 @@
 body {
     margin: 0;
-    height: 77vh;
+    padding: 0;
+    /*height: 77vh;*/
 }
-
+header{
+    margin-top: auto;
+}
 .titreMesEvent {
     font-family: 'Grand Hotel', cursive;
     color: #1F1B4C;
@@ -134,4 +137,44 @@ body {
     margin-left: 23%;
     margin-top: -13%;
     margin-bottom: 12%;
+}
+/** test pour DivDomApi version 2**/
+#Api-Image{
+  height: 400px;
+  background-color: red;
+}
+
+#Details{
+    height: 400px;
+    background-color: yellow;
+}
+
+#Api-Title{
+    height: 20%;
+    background-color: pink;
+}
+
+#ApiDate-Start{
+    height: 15%;
+    background-color: grey;
+}
+
+#ApiDate-End{
+    height: 15%;
+    background-color: coral;
+}
+
+#Api-Adresse{
+    height: 15%;
+    background-color: blue;
+}
+
+#Api-Prix{
+    height: 15%;
+    background-color: white;
+}
+
+#Api-Description{
+    height: 20%;
+    background-color: turquoise;
 }
