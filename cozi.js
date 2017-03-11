@@ -1,11 +1,12 @@
 
 // Initialise the cozy sdk.
+
    cozy.client.init();
 
 
-  return getMaifAddress()
-    .catch(getEDFAddress);
-}
+//   return getMaifAddress(){
+//     .catch(getEDFAddress);
+// }
 
 function getEDFAddress() {
    // create an index, for the Client doctype, on the vendor field.
@@ -47,7 +48,6 @@ $(document).ready(function() {
 
     var divContainer = $("#DivDomApi");
 
-@@ -89,4 +89,27 @@
         $(this).find('> .dropdown-menu').stop(true, true).fadeOut(timerOut);
         $(this).removeClass('open');
     });
@@ -57,7 +57,7 @@ $(document).ready(function() {
      console.log(address);
       $('#inputChercher').val(address.formated.replace(/\n/, ' '));
    });
-});
+
 
 function getAddress() {
   // Initialise the cozy sdk.
