@@ -4,7 +4,7 @@
     "cozy-displayName": "Mes evenements a proximite ",
     "version": "1.0.0",
     "description": "Rechercher des evenements autour de vos",
-    "icon-path": "cat.png",
+    "icon-path": "aniCat.png",
     "cozy-permissions": {
   "maifuser": {
       "description": "Lire l'adresse de votre domicile, afin d'afficher les évènements à proximité de chez vous."
