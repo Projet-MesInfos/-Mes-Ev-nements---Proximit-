@@ -6,6 +6,7 @@ body {
 header{
     margin-top: auto;
     height: 100vh;
+    /*height: 80vh;*/
 }
 .titreMesEvent {
     font-family: 'Grand Hotel', cursive;
@@ -27,14 +28,14 @@ header{
 
 .navbar-inner {
     margin-left: 20%;
-    margin-top: 8px;
+    margin-top: 0.8%;
 }
 
 
 #main-nav {
     z-index: 1001;
-    height: 80px;
-    padding: 14px;
+    height: 11%;
+    padding: 1%;
     background-color: #1A1A1A;
 }
 
@@ -45,13 +46,13 @@ header{
 }
 
 #inputChercher {
-    width: 30em;
+    width: 29%;
     height: 2.3em;
     z-index: 100;
 
 }
 #buttonSearche{
-  margin-right: 1.9em;
+  margin-left: -2.9em;
 }
 
 .glyphicon-search {
@@ -81,12 +82,11 @@ header{
 .linksDrop {
     color: white;
     font-size: 17px;
-    padding-left: 25px;
+    padding-left: 1.4em;
 }
 
 #DivDomApi {
     margin-top: 4%;
-
 }
 
 #Api-Image{
@@ -100,8 +100,8 @@ header{
   width: auto;
   height: inherit;
   margin-left: auto;
-  	margin-right: auto;
-  	display: block;
+  margin-right: auto;
+  display: block;
 }
 
 #Details{

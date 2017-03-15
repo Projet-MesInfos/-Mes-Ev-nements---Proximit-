@@ -1,10 +1,16 @@
 {
-  "name": "Mes-evenements-a-porximite",
-  "cozy-type": "static",
-  "cozy-displayName": "Mes evenements a proximite ",
-  "version": "1.0.0",
-  "description": "Rechercher des evenements autour de vos",
-  "icon-path": "./cat.jpg",
-  "cozy-permissions": {
+ "name": "Mes-evenements-a-proximite",
+    "cozy-type": "static",
+    "cozy-displayName": "Mes evenements a proximite ",
+    "version": "1.0.0",
+    "description": "Rechercher des evenements autour de vos",
+    "icon-path": "aniCat.png",
+    "cozy-permissions": {
+  "maifuser": {
+      "description": "Lire l'adresse de votre domicile, afin d'afficher les évènements à proximité de chez vous."
+  },
+  "client": {
+       "description": "Lire l'adresse de votre domicile, sur votre fiche Client EDF, afin d'afficher les évènements à proximité de chez vous."
+    }
+    }
   }
-}
