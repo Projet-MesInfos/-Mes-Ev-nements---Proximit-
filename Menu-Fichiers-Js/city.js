@@ -2,624 +2,96 @@ $(document).ready(function() {
 
     var divContainer = $("#DivDomApi");
 
-// le lien d'api
-// la filtrages des villes
+    // le lien d'api
+    // la filtrages des villes
+    var glob = function(json) {
+        var count = 0;
+
+         json.records.forEach(function(item) {
+           var itemContainer = $("<div></div>");
+           itemContainer.html(`
+             <div class="col-md-5 col-xs-12" >
+                  <div id="Api-Image" ></div>
+             </div>
+             <div class="col-md-7 col-xs-12" id="Details">
+                <div id="Api-Title" class="row"></div>
+                <div id="ApiDate-Start" class="row"></div>
+                <div id="ApiDate-End" class="row"></div>
+                <div id="Api-Adresse" class="row"></div>
+                <div id="Api-Prix" class="row"></div>
+                <div id="Api-Description" class="row"></div>
+             </div>
+             <br/>
+             <br/>`);
+
+          var imageApi = itemContainer.find('#Api-Image');
+          creImg = $("<img/>");
+          creImg.attr("src", item.record.fields.image);
+          creImg.appendTo(imageApi);
+
+          itemContainer.find("#Api-Title").html("<h2>" + item.record.fields.title + "</h2>");
+
+          itemContainer.find("#ApiDate-Start").html("<h5>Date de début:" + item.record.fields.date_start + "</h5>")
+
+          itemContainer.find("#ApiDate-End").html("<h5>Date de fin:" + item.record.fields.date_end + "</h5>");
+
+          itemContainer.find("#Api-Adresse").html("<h5>City:" + item.record.fields.city + "</h5>")
+
+          itemContainer.find("#Api-Prix").html("<h5>Le prix:" + item.record.fields.pricing_info + "</h5>")
+
+          itemContainer.find("#Api-Description").html("<h5>Description:" + item.record.fields.description + "</h5><a>Le lien vers le site:" + item.record.fields.link + " </a>");
+
+          divContainer.append(itemContainer);
+       });
+  };
+
 
     $("#cityLyon").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lyon%22%2C%20%222017%22%20%22mars%22%20&rows=20&start=4&pretty=false&timezone=UTC", function(json) {
 
-          json.records.forEach(function(item) {
-              creImg = $("<img/>");
-              creHref = creImg.attr("src", item.record.fields.image);
-              apiImage = creImg.attr("class", "apiImage");
-              divContainer.append(creImg);
+      divContainer.empty();
 
-              divTitle = $("<div></div>");
-              title = $("<h5></h5>");
-              divTitle.append(title);
-              divContainer.append(divTitle);
-              divTitle.attr("class", "apiDivTitle");
-              title.attr("class", "apiTitle");
-              title.append(" " + item.record.fields.title);
-
-              divDateStart = $("<div></div>");
-              dateStart = $("<h5>Date de début:</h5>");
-              divDateStart.append(dateStart);
-              divContainer.append(divDateStart);
-              divDateStart.attr("class", "apiDivDateStart");
-              dateStart.attr("class", "apiDateStart");
-              dateStart.append(" " +item.record.fields.date_start);
-
-              divDateEnd = $("<div></div>");
-              dateEnd = $("<h5>Date de fin:</h5>");
-              divDateEnd.append(dateEnd);
-              divContainer.append(divDateEnd);
-              divDateEnd.attr("class", "apiDivDateEnd");
-              dateEnd.attr("class", "apiDateEnd");
-              dateEnd.append(" " +item.record.fields.date_end);
-
-              divAdresse = $("<div></div>");
-              adresse = $("<h5>City: </h5>");
-              divAdresse.append(adresse);
-              divContainer.append(divAdresse);
-              divAdresse.attr("class", "apiDivAdresse");
-              adresse.attr("class", "apiAdresse");
-              adresse.append(" " +item.record.fields.city);
-
-              divPrix = $("<div></div>");
-              prix = $("<h5>Le prix:</h5>");
-              divPrix.append(prix);
-              divContainer.append(divPrix);
-              divPrix.attr("class", "apiDivPrix");
-              adresse.attr("class", "apiPrix");
-              prix.append(" " +item.record.fields.pricing_info);
-
-              divDescription = $("<div></div>");
-              description = $("<h5>Description:</h5>");
-              divDescription.append(description);
-              divContainer.append(divDescription);
-              divDescription.attr("class", "apiDivDescription");
-              description.attr("class", "apiDescription");
-              description.append(" " +item.record.fields.description);
-
-              creLink = $("<a>Le lien vers le site: </a>");
-              creLink.attr("class", "creLink");
-              divContainer.append(creLink);
-              creLink.attr("href", item.record.fields.link);
-
-            });
-
-        });
-
-    });
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lyon%22%2C%20%222017%22%20%22mars%22%20&rows=30&start=4&pretty=false&timezone=UTC", function(json){
+        glob(json); }); });
 
     $("#cityLille").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lille%22%2C%20%222017%22%2C%20%22mars%22&rows=20&pretty=false&timezone=UTC", function(json) {
-
-          json.records.forEach(function(item) {
-              creImg = $("<img/>");
-              creHref = creImg.attr("src", item.record.fields.image);
-              apiImage = creImg.attr("class", "apiImage");
-              divContainer.append(creImg);
-
-              divTitle = $("<div></div>");
-              title = $("<h5></h5>");
-              divTitle.append(title);
-              divContainer.append(divTitle);
-              divTitle.attr("class", "apiDivTitle");
-              title.attr("class", "apiTitle");
-              title.append(" " + item.record.fields.title);
-
-              divDateStart = $("<div></div>");
-              dateStart = $("<h5>Date de début:</h5>");
-              divDateStart.append(dateStart);
-              divContainer.append(divDateStart);
-              divDateStart.attr("class", "apiDivDateStart");
-              dateStart.attr("class", "apiDateStart");
-              dateStart.append(" " +item.record.fields.date_start);
-
-              divDateEnd = $("<div></div>");
-              dateEnd = $("<h5>Date de fin:</h5>");
-              divDateEnd.append(dateEnd);
-              divContainer.append(divDateEnd);
-              divDateEnd.attr("class", "apiDivDateEnd");
-              dateEnd.attr("class", "apiDateEnd");
-              dateEnd.append(" " +item.record.fields.date_end);
-
-              divAdresse = $("<div></div>");
-              adresse = $("<h5>City: </h5>");
-              divAdresse.append(adresse);
-              divContainer.append(divAdresse);
-              divAdresse.attr("class", "apiDivAdresse");
-              adresse.attr("class", "apiAdresse");
-              adresse.append(" " +item.record.fields.city);
-
-              divPrix = $("<div></div>");
-              prix = $("<h5>Le prix:</h5>");
-              divPrix.append(prix);
-              divContainer.append(divPrix);
-              divPrix.attr("class", "apiDivPrix");
-              adresse.attr("class", "apiPrix");
-              prix.append(" " +item.record.fields.pricing_info);
-
-              divDescription = $("<div></div>");
-              description = $("<h5>Description:</h5>");
-              divDescription.append(description);
-              divContainer.append(divDescription);
-              divDescription.attr("class", "apiDivDescription");
-              description.attr("class", "apiDescription");
-              description.append(" " +item.record.fields.description);
-
-              creLink = $("<a>Le lien vers le site: </a>");
-              creLink.attr("class", "creLink");
-              divContainer.append(creLink);
-              creLink.attr("href", item.record.fields.link);
-
-            });
-
-        });
-
-    });
+      divContainer.empty();
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lille%22%2C%20%222017%22%2C%20%22mars%22&rows=30&pretty=false&timezone=UTC", function(json) {
+          glob(json); }) });
 
     $("#cityBretagne").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Bretagne%22%2C%20%222017%22%2C%20%22mars%22&rows=20&start=1&pretty=false&timezone=UTC", function(json) {
-
-          json.records.forEach(function(item) {
-              creImg = $("<img/>");
-              creHref = creImg.attr("src", item.record.fields.image);
-              apiImage = creImg.attr("class", "apiImage");
-              divContainer.append(creImg);
-
-              divTitle = $("<div></div>");
-              title = $("<h5></h5>");
-              divTitle.append(title);
-              divContainer.append(divTitle);
-              divTitle.attr("class", "apiDivTitle");
-              title.attr("class", "apiTitle");
-              title.append(" " + item.record.fields.title);
-
-              divDateStart = $("<div></div>");
-              dateStart = $("<h5>Date de début:</h5>");
-              divDateStart.append(dateStart);
-              divContainer.append(divDateStart);
-              divDateStart.attr("class", "apiDivDateStart");
-              dateStart.attr("class", "apiDateStart");
-              dateStart.append(" " +item.record.fields.date_start);
-
-              divDateEnd = $("<div></div>");
-              dateEnd = $("<h5>Date de fin:</h5>");
-              divDateEnd.append(dateEnd);
-              divContainer.append(divDateEnd);
-              divDateEnd.attr("class", "apiDivDateEnd");
-              dateEnd.attr("class", "apiDateEnd");
-              dateEnd.append(" " +item.record.fields.date_end);
-
-              divAdresse = $("<div></div>");
-              adresse = $("<h5>City: </h5>");
-              divAdresse.append(adresse);
-              divContainer.append(divAdresse);
-              divAdresse.attr("class", "apiDivAdresse");
-              adresse.attr("class", "apiAdresse");
-              adresse.append(" " +item.record.fields.city);
-
-              divPrix = $("<div></div>");
-              prix = $("<h5>Le prix:</h5>");
-              divPrix.append(prix);
-              divContainer.append(divPrix);
-              divPrix.attr("class", "apiDivPrix");
-              adresse.attr("class", "apiPrix");
-              prix.append(" " +item.record.fields.pricing_info);
-
-              divDescription = $("<div></div>");
-              description = $("<h5>Description:</h5>");
-              divDescription.append(description);
-              divContainer.append(divDescription);
-              divDescription.attr("class", "apiDivDescription");
-              description.attr("class", "apiDescription");
-              description.append(" " +item.record.fields.description);
-
-              creLink = $("<a>Le lien vers le site: </a>");
-              creLink.attr("class", "creLink");
-              divContainer.append(creLink);
-              creLink.attr("href", item.record.fields.link);
-
-            });
-
-        });
-
-    });
+      divContainer.empty();
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Bretagne%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
+          glob(json); }); });
 
     $("#cityMarseille").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Marseille%22%2C%20%222017%22%2C%20%22mars%22&rows=20&start=1&pretty=false&timezone=UTC", function(json) {
+      divContainer.empty();
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Marseille%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
+          glob(json); }); });
 
-          json.records.forEach(function(item) {
-              creImg = $("<img/>");
-              creHref = creImg.attr("src", item.record.fields.image);
-              apiImage = creImg.attr("class", "apiImage");
-              divContainer.append(creImg);
+    $("#cityNantes").on("click", function() {
+      divContainer.empty();
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Nantes%22%2C%20%222017%22%2C%20%22mars%22&rows=30&pretty=false&timezone=UTC", function(json) {
+          glob(json);  }); });
 
-              divTitle = $("<div></div>");
-              title = $("<h5></h5>");
-              divTitle.append(title);
-              divContainer.append(divTitle);
-              divTitle.attr("class", "apiDivTitle");
-              title.attr("class", "apiTitle");
-              title.append(" " + item.record.fields.title);
+    $("#cityTours").on("click", function() {
+      divContainer.empty();
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Tours%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
+          glob(json);  });  });
 
-              divDateStart = $("<div></div>");
-              dateStart = $("<h5>Date de début:</h5>");
-              divDateStart.append(dateStart);
-              divContainer.append(divDateStart);
-              divDateStart.attr("class", "apiDivDateStart");
-              dateStart.attr("class", "apiDateStart");
-              dateStart.append(" " +item.record.fields.date_start);
-
-              divDateEnd = $("<div></div>");
-              dateEnd = $("<h5>Date de fin:</h5>");
-              divDateEnd.append(dateEnd);
-              divContainer.append(divDateEnd);
-              divDateEnd.attr("class", "apiDivDateEnd");
-              dateEnd.attr("class", "apiDateEnd");
-              dateEnd.append(" " +item.record.fields.date_end);
-
-              divAdresse = $("<div></div>");
-              adresse = $("<h5>City: </h5>");
-              divAdresse.append(adresse);
-              divContainer.append(divAdresse);
-              divAdresse.attr("class", "apiDivAdresse");
-              adresse.attr("class", "apiAdresse");
-              adresse.append(" " +item.record.fields.city);
-
-              divPrix = $("<div></div>");
-              prix = $("<h5>Le prix:</h5>");
-              divPrix.append(prix);
-              divContainer.append(divPrix);
-              divPrix.attr("class", "apiDivPrix");
-              adresse.attr("class", "apiPrix");
-              prix.append(" " +item.record.fields.pricing_info);
-
-              divDescription = $("<div></div>");
-              description = $("<h5>Description:</h5>");
-              divDescription.append(description);
-              divContainer.append(divDescription);
-              divDescription.attr("class", "apiDivDescription");
-              description.attr("class", "apiDescription");
-              description.append(" " +item.record.fields.description);
-
-              creLink = $("<a>Le lien vers le site: </a>");
-              creLink.attr("class", "creLink");
-              divContainer.append(creLink);
-              creLink.attr("href", item.record.fields.link);
-
-            });
-
-        });
-
-    });
-
-
-
-        $("#cityNantes").on("click", function() {
-            $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Nantes%22%2C%20%222017%22%2C%20%22mars%22&rows=20&pretty=false&timezone=UTC", function(json) {
-
-              json.records.forEach(function(item) {
-                  creImg = $("<img/>");
-                  creHref = creImg.attr("src", item.record.fields.image);
-                  apiImage = creImg.attr("class", "apiImage");
-                  divContainer.append(creImg);
-
-                  divTitle = $("<div></div>");
-                  title = $("<h5></h5>");
-                  divTitle.append(title);
-                  divContainer.append(divTitle);
-                  divTitle.attr("class", "apiDivTitle");
-                  title.attr("class", "apiTitle");
-                  title.append(" " + item.record.fields.title);
-
-                  divDateStart = $("<div></div>");
-                  dateStart = $("<h5>Date de début:</h5>");
-                  divDateStart.append(dateStart);
-                  divContainer.append(divDateStart);
-                  divDateStart.attr("class", "apiDivDateStart");
-                  dateStart.attr("class", "apiDateStart");
-                  dateStart.append(" " +item.record.fields.date_start);
-
-                  divDateEnd = $("<div></div>");
-                  dateEnd = $("<h5>Date de fin:</h5>");
-                  divDateEnd.append(dateEnd);
-                  divContainer.append(divDateEnd);
-                  divDateEnd.attr("class", "apiDivDateEnd");
-                  dateEnd.attr("class", "apiDateEnd");
-                  dateEnd.append(" " +item.record.fields.date_end);
-
-                  divAdresse = $("<div></div>");
-                  adresse = $("<h5>City: </h5>");
-                  divAdresse.append(adresse);
-                  divContainer.append(divAdresse);
-                  divAdresse.attr("class", "apiDivAdresse");
-                  adresse.attr("class", "apiAdresse");
-                  adresse.append(" " +item.record.fields.city);
-
-                  divPrix = $("<div></div>");
-                  prix = $("<h5>Le prix:</h5>");
-                  divPrix.append(prix);
-                  divContainer.append(divPrix);
-                  divPrix.attr("class", "apiDivPrix");
-                  adresse.attr("class", "apiPrix");
-                  prix.append(" " +item.record.fields.pricing_info);
-
-                  divDescription = $("<div></div>");
-                  description = $("<h5>Description:</h5>");
-                  divDescription.append(description);
-                  divContainer.append(divDescription);
-                  divDescription.attr("class", "apiDivDescription");
-                  description.attr("class", "apiDescription");
-                  description.append(" " +item.record.fields.description);
-
-                  creLink = $("<a>Le lien vers le site: </a>");
-                  creLink.attr("class", "creLink");
-                  divContainer.append(creLink)
-                  creLink.attr("href", item.record.fields.link);
-
-                });
-
-            });
-
-        });
-
-
-                $("#cityTours").on("click", function() {
-                    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Tours%22%2C%20%222017%22%2C%20%22mars%22&rows=20&pretty=false&timezone=UTC", function(json) {
-
-                      json.records.forEach(function(item) {
-                          creImg = $("<img/>");
-                          creHref = creImg.attr("src", item.record.fields.image);
-                          apiImage = creImg.attr("class", "apiImage");
-                          divContainer.append(creImg);
-
-                          divTitle = $("<div></div>");
-                          title = $("<h5></h5>");
-                          divTitle.append(title);
-                          divContainer.append(divTitle);
-                          divTitle.attr("class", "apiDivTitle");
-                          title.attr("class", "apiTitle");
-                          title.append(" " + item.record.fields.title);
-
-                          divDateStart = $("<div></div>");
-                          dateStart = $("<h5>Date de début:</h5>");
-                          divDateStart.append(dateStart);
-                          divContainer.append(divDateStart);
-                          divDateStart.attr("class", "apiDivDateStart");
-                          dateStart.attr("class", "apiDateStart");
-                          dateStart.append(" " +item.record.fields.date_start);
-
-                          divDateEnd = $("<div></div>");
-                          dateEnd = $("<h5>Date de fin:</h5>");
-                          divDateEnd.append(dateEnd);
-                          divContainer.append(divDateEnd);
-                          divDateEnd.attr("class", "apiDivDateEnd");
-                          dateEnd.attr("class", "apiDateEnd");
-                          dateEnd.append(" " +item.record.fields.date_end);
-
-                          divAdresse = $("<div></div>");
-                          adresse = $("<h5>City: </h5>");
-                          divAdresse.append(adresse);
-                          divContainer.append(divAdresse);
-                          divAdresse.attr("class", "apiDivAdresse");
-                          adresse.attr("class", "apiAdresse");
-                          adresse.append(" " +item.record.fields.city);
-
-                          divPrix = $("<div></div>");
-                          prix = $("<h5>Le prix:</h5>");
-                          divPrix.append(prix);
-                          divContainer.append(divPrix);
-                          divPrix.attr("class", "apiDivPrix");
-                          adresse.attr("class", "apiPrix");
-                          prix.append(" " +item.record.fields.pricing_info);
-
-                          divDescription = $("<div></div>");
-                          description = $("<h5>Description:</h5>");
-                          divDescription.append(description);
-                          divContainer.append(divDescription);
-                          divDescription.attr("class", "apiDivDescription");
-                          description.attr("class", "apiDescription");
-                          description.append(" " +item.record.fields.description);
-
-                          creLink = $("<a>Le lien vers le site: </a>");
-                          creLink.attr("class", "creLink");
-                          divContainer.append(creLink);
-                          creLink.attr("href", item.record.fields.link);
-
-                        });
-
-                    });
-
-                });
-
-                $("#cityMontpellier").on("click", function() {
-                    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Montpellier%22%2C%20%222017%22%2C%20%22mars%22&rows=20&pretty=false&timezone=UTC", function(json) {
-
-                      json.records.forEach(function(item) {
-                          creImg = $("<img/>");
-                          creHref = creImg.attr("src", item.record.fields.image);
-                          apiImage = creImg.attr("class", "apiImage");
-                          divContainer.append(creImg);
-
-                          divTitle = $("<div></div>");
-                          title = $("<h5></h5>");
-                          divTitle.append(title);
-                          divContainer.append(divTitle);
-                          divTitle.attr("class", "apiDivTitle");
-                          title.attr("class", "apiTitle");
-                          title.append(" " + item.record.fields.title);
-
-                          divDateStart = $("<div></div>");
-                          dateStart = $("<h5>Date de début:</h5>");
-                          divDateStart.append(dateStart);
-                          divContainer.append(divDateStart);
-                          divDateStart.attr("class", "apiDivDateStart");
-                          dateStart.attr("class", "apiDateStart");
-                          dateStart.append(" " +item.record.fields.date_start);
-
-                          divDateEnd = $("<div></div>");
-                          dateEnd = $("<h5>Date de fin:</h5>");
-                          divDateEnd.append(dateEnd);
-                          divContainer.append(divDateEnd);
-                          divDateEnd.attr("class", "apiDivDateEnd");
-                          dateEnd.attr("class", "apiDateEnd");
-                          dateEnd.append(" " +item.record.fields.date_end);
-
-                          divAdresse = $("<div></div>");
-                          adresse = $("<h5>City: </h5>");
-                          divAdresse.append(adresse);
-                          divContainer.append(divAdresse);
-                          divAdresse.attr("class", "apiDivAdresse");
-                          adresse.attr("class", "apiAdresse");
-                          adresse.append(" " +item.record.fields.city);
-
-                          divPrix = $("<div></div>");
-                          prix = $("<h5>Le prix:</h5>");
-                          divPrix.append(prix);
-                          divContainer.append(divPrix);
-                          divPrix.attr("class", "apiDivPrix");
-                          adresse.attr("class", "apiPrix");
-                          prix.append(" " +item.record.fields.pricing_info);
-
-                          divDescription = $("<div></div>");
-                          description = $("<h5>Description:</h5>");
-                          divDescription.append(description);
-                          divContainer.append(divDescription);
-                          divDescription.attr("class", "apiDivDescription");
-                          description.attr("class", "apiDescription");
-                          description.append(" " +item.record.fields.description);
-
-                          creLink = $("<a>Le lien vers le site: </a>");
-                          creLink.attr("class", "creLink");
-                          divContainer.append(creLink);
-                          creLink.attr("href", item.record.fields.link);
-
-                        });
-
-                    });
-
-                });
-
-
+    $("#cityMontpellier").on("click", function() {
+      divContainer.empty();
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Montpellier%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
+          glob(json);  });  });
 
     $("#cityBordeaux").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Bordeaux%22%2C%20%222017%22%2C%20%22mars%22&rows=20&start=3&pretty=false&timezone=UTC", function(json) {
-
-          json.records.forEach(function(item) {
-              creImg = $("<img/>");
-              creHref = creImg.attr("src", item.record.fields.image);
-              apiImage = creImg.attr("class", "apiImage");
-              divContainer.append(creImg);
-
-              divTitle = $("<div></div>");
-              title = $("<h5></h5>");
-              divTitle.append(title);
-              divContainer.append(divTitle);
-              divTitle.attr("class", "apiDivTitle");
-              title.attr("class", "apiTitle");
-              title.append(" " + item.record.fields.title);
-
-              divDateStart = $("<div></div>");
-              dateStart = $("<h5>Date de début:</h5>");
-              divDateStart.append(dateStart);
-              divContainer.append(divDateStart);
-              divDateStart.attr("class", "apiDivDateStart");
-              dateStart.attr("class", "apiDateStart");
-              dateStart.append(" " +item.record.fields.date_start);
-
-              divDateEnd = $("<div></div>");
-              dateEnd = $("<h5>Date de fin:</h5>");
-              divDateEnd.append(dateEnd);
-              divContainer.append(divDateEnd);
-              divDateEnd.attr("class", "apiDivDateEnd");
-              dateEnd.attr("class", "apiDateEnd");
-              dateEnd.append(" " +item.record.fields.date_end);
-
-              divAdresse = $("<div></div>");
-              adresse = $("<h5>City: </h5>");
-              divAdresse.append(adresse);
-              divContainer.append(divAdresse);
-              divAdresse.attr("class", "apiDivAdresse");
-              adresse.attr("class", "apiAdresse");
-              adresse.append(" " +item.record.fields.city);
-
-              divPrix = $("<div></div>");
-              prix = $("<h5>Le prix:</h5>");
-              divPrix.append(prix);
-              divContainer.append(divPrix);
-              divPrix.attr("class", "apiDivPrix");
-              adresse.attr("class", "apiPrix");
-              prix.append(" " +item.record.fields.pricing_info);
-
-              divDescription = $("<div></div>");
-              description = $("<h5>Description:</h5>");
-              divDescription.append(description);
-              divContainer.append(divDescription);
-              divDescription.attr("class", "apiDivDescription");
-              description.attr("class", "apiDescription");
-              description.append(" " +item.record.fields.description);
-
-              creLink = $("<a>Le lien vers le site: </a>");
-              creLink.attr("class", "creLink");
-              divContainer.append(creLink);
-              creLink.attr("href", item.record.fields.link);
-
-            });
-
-        });
-
-    });
+      divContainer.empty();
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Bordeaux%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
+          glob(json);      });  });
 
     $("#cityNice").on("click", function() {
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Nice%22%2C%20%222017%22%2C%20%22mars%22&rows=20&pretty=false&timezone=UTC", function(json) {
-
-          json.records.forEach(function(item) {
-              creImg = $("<img/>");
-              creHref = creImg.attr("src", item.record.fields.image);
-              apiImage = creImg.attr("class", "apiImage");
-              divContainer.append(creImg);
-
-              divTitle = $("<div></div>");
-              title = $("<h5></h5>");
-              divTitle.append(title);
-              divContainer.append(divTitle);
-              divTitle.attr("class", "apiDivTitle");
-              title.attr("class", "apiTitle");
-              title.append(" " + item.record.fields.title);
-
-              divDateStart = $("<div></div>");
-              dateStart = $("<h5>Date de début:</h5>");
-              divDateStart.append(dateStart);
-              divContainer.append(divDateStart);
-              divDateStart.attr("class", "apiDivDateStart");
-              dateStart.attr("class", "apiDateStart");
-              dateStart.append(" " +item.record.fields.date_start);
-
-              divDateEnd = $("<div></div>");
-              dateEnd = $("<h5>Date de fin:</h5>");
-              divDateEnd.append(dateEnd);
-              divContainer.append(divDateEnd);
-              divDateEnd.attr("class", "apiDivDateEnd");
-              dateEnd.attr("class", "apiDateEnd");
-              dateEnd.append(" " +item.record.fields.date_end);
-
-              divAdresse = $("<div></div>");
-              adresse = $("<h5>City: </h5>");
-              divAdresse.append(adresse);
-              divContainer.append(divAdresse);
-              divAdresse.attr("class", "apiDivAdresse");
-              adresse.attr("class", "apiAdresse");
-              adresse.append(" " +item.record.fields.city);
-
-              divPrix = $("<div></div>");
-              prix = $("<h5>Le prix:</h5>");
-              divPrix.append(prix);
-              divContainer.append(divPrix);
-              divPrix.attr("class", "apiDivPrix");
-              adresse.attr("class", "apiPrix");
-              prix.append(" " +item.record.fields.pricing_info);
-
-              divDescription = $("<div></div>");
-              description = $("<h5>Description:</h5>");
-              divDescription.append(description);
-              divContainer.append(divDescription);
-              divDescription.attr("class", "apiDivDescription");
-              description.attr("class", "apiDescription");
-              description.append(" " +item.record.fields.description);
-
-              creLink = $("<a>Le lien vers le site: </a>");
-              creLink.attr("class", "creLink");
-              divContainer.append(creLink);
-              creLink.attr("href", item.record.fields.link);
-
-            });
-
-        });
-
+      divContainer.empty();
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Nice%22%2C%20%222017%22%2C%20%22mars%22&rows=30&pretty=false&timezone=UTC", function(json) {
+glob(json);
     });
-
+});
 });

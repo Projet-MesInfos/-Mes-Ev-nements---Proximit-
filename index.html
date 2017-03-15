@@ -8,17 +8,22 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css" media="screen" title="no title">
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="./DownloadMenuFiles/nestednav.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="nestednav.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="jquery.nestednav.min.js"></script>
+    <script src="./DownloadMenuFiles/jquery.nestednav.min.js"></script>
 
 </head>
 
 <body>
-        <!-- Dropdown menu -->
+
+      <!-- Dropdown menu -->
+
 
     <div class="containerGlobal">
         <div id="main-nav" class="navbar navbar-inverse navbar-fixed-top">
@@ -143,50 +148,32 @@
         </div>
     </header>
 
-   <!-- Form input -->
-
-    <!-- <form id="formInput" class="navbar-form inline-form">
-        <div class="form-group">
-            <input id="inputChercher" type="search" class="input-sm form-control" placeholder="Mettez votre adresse">
-            <span class="glyphicon glyphicon-search"></span>
-        </div>
-    </form> -->
-
     <!-- Barre de recherche -->
-    <div class="row inputChercher">
-        <div class="col-sm-4 col-sm-offset-4">
+    <div id="formInput" class="row">
+        <div class="col-sm-4 col-sm-offset-0">
                 <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Mettez votre adresse" >
+                    <input id="inputChercher" type="text" class="form-control"  placeholder="Mettez votre adresse" >
                     <span class="input-group-addon">
-                        <button type="submit" class="glyphicon glyphicon-search"></button>
+                        <button id="buttonSearche" type="submit" class="glyphicon glyphicon-search"></button>
                     </span>
                 </div>
         </div>
 	</div>
+
 <div class="container takeAPI">
 
     <div id="DivDomApi" class="row">
-      <div class="col-md-5 col-xs-12" id="Api-Image"></div>
-      <div class="col-md-7 col-xs-12" id="Details">
-        <div id="Api-Title" class="row"></div>
-        <div id="ApiDate-Start" class="row"></div>
-        <div id="ApiDate-End" class="row"></div>
-        <div id="Api-Adresse" class="row"></div>
-        <div id="Api-Prix" class="row"></div>
-        <div id="Api-Description" class="row"></div>
-      </div>
+
     </div>
-</div> <!-- end container takeAPI-->
+ </div> <!--end container takeAPI -->
 
 
-    <script src="index.js" type="text/javascript"></script>
+   <script src="index.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/concert.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/city.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/general.js" type="text/javascript"></script>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="./DownloadMenuFiles/jquery.nestednav.min.js"></script>
+
 </body>
 
 </html>
