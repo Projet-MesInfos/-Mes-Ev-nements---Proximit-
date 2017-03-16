@@ -7,18 +7,8 @@ body {
     font-family: 'Grand Hotel', cursive;
     color: #1F1B4C;
     font-size: 4.5em;
-    margin-top: 12.5%;
     text-align: center;
-}
-
-@media screen and (max-width: 480px) {
-    .titreMesEvent {
-        font-family: 'Grand Hotel', cursive;
-        color: #1F1B4C;
-        font-size: 2.5em;
-        margin-top: 82%;
-        text-align: center;
-    }
+    margin-top: 15%;
 }
 
 .navbar-inner {
@@ -26,6 +16,23 @@ body {
     margin-top: 0.8%;
 }
 
+#div-address-client {
+    margin-top: 23%;
+    margin-left: 14%;
+}
+
+#idSuccess {
+    height: 2em;
+    width: 17em;
+}
+
+#button-address {
+    width: 17em;
+}
+
+#form-address {
+    margin-top: -3%;
+}
 
 #main-nav {
     z-index: 1001;
@@ -35,19 +42,19 @@ body {
 }
 
 #formInput {
-    margin-top: 3%;
+    margin-top: 4%;
     display: flex;
     justify-content: center;
 }
 
 #inputChercher {
-    width: 29%;
+    width: 40%;
     height: 2.3em;
     z-index: 100;
-
 }
-#buttonSearche{
-  margin-left: -2.9em;
+
+#buttonSearche {
+    margin-left: -2.9em;
 }
 
 .glyphicon-search {
@@ -86,6 +93,7 @@ body {
 
 .apiImage {
     margin-left: 3%;
+    margin-top: 2%;
     width: 29em;
     height: 29em;
 }
@@ -100,7 +108,7 @@ body {
 
 .apiTitle {
     text-align: center;
-    font-size: 33px;
+    font-size: 28px;
     font-family: 'Josefin Sans', sans-serif;
     color: black;
     padding-top: 0.3em;
@@ -169,4 +177,268 @@ body {
     margin-left: 23%;
     margin-top: -14%;
     margin-bottom: 8%;
+}
+
+@media screen and (max-width: 480px) {
+    .titreMesEvent {
+        font-family: 'Grand Hotel', cursive;
+        color: #1F1B4C;
+        font-size: 31px;
+        margin-top: 30%;
+        text-align: center;
+    }
+    #formInput {
+        margin-top: 4%;
+        display: flex;
+        justify-content: center;
+    }
+    #buttonSearche {
+        padding-top: 0.2em;
+        margin-right: -2em;
+    }
+    #div-address-client {
+        margin-top: 22%;
+        margin-left: 10%;
+    }
+    .apiTitle {
+        text-align: center;
+        font-size: 18px;
+        font-family: 'Josefin Sans', sans-serif;
+        color: black;
+        padding-top: 0.3em;
+        width: 61%;
+        height: 120px;
+        overflow: hidden;
+        margin-left: -5em;
+    }
+    .apiImage {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30%;
+        margin-left: 2%;
+        margin-top: 2%;
+        width: 23em;
+        height: 14em;
+    }
+    .apiDateStart {
+        font-size: 12px;
+        margin-right: 8em;
+        margin-top: -3em;
+    }
+    .apiDateEnd {
+        font-size: 12px;
+        margin-right: 8em;
+    }
+    .apiAdresse {
+        font-size: 10px;
+    }
+    .apiAdresse {
+        font-size: 13px;
+        margin-left: -7em;
+    }
+    .apiPrix {
+        width: 60%;
+        height: 20px;
+        overflow: hidden;
+        text-align: center;
+        font-size: 12px;
+        margin-left: -9em;
+    }
+    .apiDescription {
+        display: none;
+    }
+    .creLink {
+        display: flex;
+        justify-content: center;
+        margin-left: -8%;
+        margin-top: -10%;
+        margin-bottom: 10%;
+    }
+}
+
+@media only screen and (max-width: 568px) and (min-width:320px) {
+    .apiDateEnd {
+        font-size: 12px;
+        margin-right: 4em;
+    }
+    .apiDateStart {
+        font-size: 12px;
+        margin-right: 4em;
+    }
+    .apiImage {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30%;
+        margin-left: 10%;
+        margin-top: 2%;
+        width: 16em;
+        height: 14em;
+    }
+    .apiPrix {
+        width: 60%;
+        height: 20px;
+        overflow: hidden;
+        text-align: center;
+        font-size: 12px;
+        margin-left: -5em;
+    }
+    .creLink {
+        display: flex;
+        justify-content: center;
+        margin-left: 3%;
+        margin-top: -10%;
+        margin-bottom: 10%;
+    }
+    .titreMesEvent {
+        font-family: 'Grand Hotel', cursive;
+        color: #1F1B4C;
+        font-size: 29px;
+        margin-top: 30%;
+        text-align: center;
+    }
+    #div-address-client {
+        margin-top: 22%;
+        margin-left: 4%;
+    }
+}
+
+@media only screen and (max-width: 667px) and (min-width:375px) {
+    .apiImage {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30%;
+        margin-left: 5%;
+        margin-top: 2%;
+        width: 22em;
+        height: 14em;
+    }
+    #div-address-client {
+        margin-top: 22%;
+        margin-left: 9%;
+    }
+}
+
+@media only screen and (max-width: 736px) and (min-width:414px) {
+    .apiImage {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30%;
+        margin-left: 2%;
+        margin-top: 2%;
+        width: 26em;
+        height: 14em;
+    }
+    #div-address-client {
+        margin-top: 22%;
+        margin-left: 16%;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .apiImage {
+        margin-left: 5%;
+        margin-top: 2%;
+        width: 28em;
+        height: 27em;
+    }
+    .apiDivTitle {
+        display: flex;
+        justify-content: center;
+        margin-top: -49%;
+        margin-bottom: 22%;
+        margin-left: 53%;
+    }
+    .apiTitle {
+        text-align: center;
+        font-size: 21px;
+        font-family: 'Josefin Sans', sans-serif;
+        color: black;
+        padding-top: 0.3em;
+        width: 68%;
+        height: 100px;
+        overflow: hidden;
+    }
+    .apiDivDateStart {
+        display: flex;
+        justify-content: center;
+        margin-left: 53%;
+        margin-top: -31%;
+        margin-bottom: 22%;
+    }
+    .apiDivDateEnd {
+        display: flex;
+        justify-content: center;
+        margin-left: 52%;
+        margin-top: -22%;
+        margin-bottom: 19%;
+    }
+    .apiDivAdresse {
+        display: flex;
+        justify-content: center;
+        margin-left: 52%;
+        margin-top: -19%;
+        margin-bottom: 17%;
+    }
+    .apiDivPrix {
+        display: flex;
+        justify-content: center;
+        margin-left: 52%;
+        margin-top: -17%;
+        margin-bottom: 15%;
+    }
+    .apiDivDescription {
+        display: flex;
+        justify-content: center;
+        margin-left: 52%;
+        margin-top: -14.5%;
+        margin-bottom: 13%;
+    }
+    .creLink {
+        display: flex;
+        justify-content: center;
+        margin-left: 51%;
+        margin-top: -14%;
+        margin-bottom: 14%;
+    }
+}
+
+@media only screen and (max-width: 1366px) and (min-width:1024px) {
+    .creLink {
+        display: flex;
+        justify-content: center;
+        margin-left: 50%;
+        margin-top: -14%;
+        margin-bottom: 10%;
+    }
+    .apiImage {
+        margin-left: 7%;
+        margin-top: 2%;
+        margin-bottom: 7%;
+        width: 28em;
+        height: 27em;
+    }
+    .apiDivTitle {
+        display: flex;
+        justify-content: center;
+        margin-top: -40%;
+        margin-bottom: 24%;
+        margin-left: 53%;
+    }
+    .apiTitle {
+        text-align: center;
+        font-size: 24px;
+        font-family: 'Josefin Sans', sans-serif;
+        color: black;
+        padding-top: 0.3em;
+        width: 78%;
+        height: 120px;
+        overflow: hidden;
+    }
+    .apiDivDescription {
+        display: none;
+    }
+    .navbar-inner {
+        margin-left: 0%;
+        margin-top: 3.8%;
+    }
 }

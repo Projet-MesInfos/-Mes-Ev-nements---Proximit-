@@ -13,18 +13,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" media="screen">
     <link href="nestednav.css" rel="stylesheet">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="jquery.nestednav.min.js"></script>
-    <script src="./DownloadMenuFiles/jquery.nestednav.min.js"></script>
     <link href="./DownloadMenuFiles/nestednav.css" rel="stylesheet">
-    <script src='./vendors/cozy-client.js' ></script>
-
 </head>
 
 <body>
 
-      <!-- Dropdown menu -->
+    <!-- Dropdown menu -->
 
 
     <div class="containerGlobal">
@@ -140,24 +134,38 @@
         </div>
 
     </div>
-
-
     <!-- header -->
 
-            <h2 class="titreMesEvent">Mes événements à proximité</h2>
 
-                <div id="formInput" class="input-group stylish-input-group">
-                    <input id="inputChercher" type="text" class="form-control"  placeholder="Rechercher vos evenements" >
-                    <span class="input-group-addon">
+    <div class="col-lg-2 col-md-6 col-sm-6">
+
+        <div id="div-address-client" class="form-group has-success has-feedback">
+            <input type="text" class="form-control" id="idSuccess">
+            <button class="btn btn-primary" type="submit" id="button-address">Les évenements à votre proximité</button>
+        </div>
+    </div>
+
+    <div class="col-lg-8 col-md-12 col-sm-12 ">
+        <h2 class="titreMesEvent">Mes événements à proximité</h2>
+
+        <div id="formInput" class="input-group stylish-input-group">
+            <input id="inputChercher" type="text" class="form-control" placeholder="Rechercher vos evenements">
+            <span class="input-group-addon">
                         <button id="buttonSearche" type="submit" class="glyphicon glyphicon-search"></button>
                     </span>
-                </div>
-
+        </div>
+    </div>
 
     <div id="DivDomApi"></div>
 
-    <script src="cozi.js" type="text/javascript"></script>
-   <script src="index.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="jquery.nestednav.min.js"></script>
+    <script src="./DownloadMenuFiles/jquery.nestednav.min.js"></script>
+
+    <script src="cozy-client.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/concert.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/city.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/general.js" type="text/javascript"></script>
