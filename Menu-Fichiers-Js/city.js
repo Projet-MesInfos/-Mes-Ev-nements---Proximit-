@@ -72,22 +72,22 @@ $(document).ready(function() {
 
       divContainer.empty();
 
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lyon%22%2C%20%222017%22%20%22mars%22%20&rows=30&start=9&pretty=false&timezone=UTC", function(json){
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lyon%22%2C%20%222017%22%20%22mars%22%20&rows=30&start=12&pretty=false&timezone=UTC", function(json){
         glob(json); }); });
 
     $("#cityLille").on("click", function() {
       divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lille%22%2C%20%222017%22%2C%20%22mars%22&rows=30&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Lille%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=2&pretty=false&timezone=UTC", function(json) {
           glob(json); }) });
 
     $("#cityBretagne").on("click", function() {
       divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Bretagne%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Bretagne%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=2&pretty=false&timezone=UTC", function(json) {
           glob(json); }); });
 
     $("#cityMarseille").on("click", function() {
       divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Marseille%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Marseille%22%2C%20%222017%22%2C%20%22mars%22&rows=30&start=6&pretty=false&timezone=UTC", function(json) {
           glob(json); }); });
 
     $("#cityNantes").on("click", function() {

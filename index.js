@@ -8,7 +8,7 @@ $(document).ready(function() {
     var roww = '&rows=30';
     var startt = '&start=2';
     var apiPp = '&pretty=false';
-    var apiTt = '&timezone=UTC';
+    var apiTt = '&timezone=2017';
     var inputt = $("#inputChercher");
 
     $("#buttonSearche").on("click", function() {
@@ -82,6 +82,7 @@ $(document).ready(function() {
     });
 
     var apiOpenData = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
+    var dateC = '%22%2C%20%222017%22%20%22mars';
     var row = '&rows=30';
     var start = '&start=2';
     var apiP = '&pretty=false';
@@ -90,7 +91,7 @@ $(document).ready(function() {
 
     $("#button-address").on("click", function() {
         divContainer.empty();
-        var url = apiOpenData + input.val() + row + start + apiP + apiT;
+        var url = apiOpenData + input.val() + dateC + row + start + apiP + apiT;
 
         $.getJSON(url, function(json) {
 
