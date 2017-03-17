@@ -5,160 +5,85 @@ $(document).ready(function() {
     // input
 
     var apiOpenDataa = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
-    var dateA = '%22%2C%20%222017';
     var roww = '&rows=30';
     var startt = '&start=2';
     var apiPp = '&pretty=false';
     var apiTt = '&timezone=UTC';
     var inputt = $("#inputChercher");
 
-    $("#buttonSearche").on("click", function() {
-        divContainer.empty();
-        var urll = apiOpenDataa + inputt.val() + dateA + roww + startt + apiPp + apiTt;
+    var fetchEvents = function() {
+      divContainer.empty();
+      var urll = apiOpenDataa + inputt.val() + roww + startt + apiPp + apiTt;
 
-        $.getJSON(urll, function(json) {
+      $.getJSON(urll, function(json) {
 
-            json.records.forEach(function(item) {
-                creImg = $("<img/>");
-                creHref = creImg.attr("src", item.record.fields.image);
-                apiImage = creImg.attr("class", "apiImage");
-                divContainer.append(creImg);
+          json.records.forEach(function(item) {
+              creImg = $("<img/>");
+              creHref = creImg.attr("src", item.record.fields.image);
+              apiImage = creImg.attr("class", "apiImage");
+              divContainer.append(creImg);
 
-                divTitle = $("<div></div>");
-                title = $("<h5></h5>");
-                divTitle.append(title);
-                divContainer.append(divTitle);
-                divTitle.attr("class", "apiDivTitle");
-                title.attr("class", "apiTitle");
-                title.append(" " + item.record.fields.title);
+              divTitle = $("<div></div>");
+              title = $("<h5></h5>");
+              divTitle.append(title);
+              divContainer.append(divTitle);
+              divTitle.attr("class", "apiDivTitle");
+              title.attr("class", "apiTitle");
+              title.append(" " + item.record.fields.title);
 
-                divDateStart = $("<div></div>");
-                dateStart = $("<h5>Date de début:</h5>");
-                divDateStart.append(dateStart);
-                divContainer.append(divDateStart);
-                divDateStart.attr("class", "apiDivDateStart");
-                dateStart.attr("class", "apiDateStart");
-                dateStart.append(" " + item.record.fields.date_start);
+              divDateStart = $("<div></div>");
+              dateStart = $("<h5>Date de début:</h5>");
+              divDateStart.append(dateStart);
+              divContainer.append(divDateStart);
+              divDateStart.attr("class", "apiDivDateStart");
+              dateStart.attr("class", "apiDateStart");
+              dateStart.append(" " + item.record.fields.date_start);
 
-                divDateEnd = $("<div></div>");
-                dateEnd = $("<h5>Date de fin:</h5>");
-                divDateEnd.append(dateEnd);
-                divContainer.append(divDateEnd);
-                divDateEnd.attr("class", "apiDivDateEnd");
-                dateEnd.attr("class", "apiDateEnd");
-                dateEnd.append(" " + item.record.fields.date_end);
+              divDateEnd = $("<div></div>");
+              dateEnd = $("<h5>Date de fin:</h5>");
+              divDateEnd.append(dateEnd);
+              divContainer.append(divDateEnd);
+              divDateEnd.attr("class", "apiDivDateEnd");
+              dateEnd.attr("class", "apiDateEnd");
+              dateEnd.append(" " + item.record.fields.date_end);
 
-                divAdresse = $("<div></div>");
-                adresse = $("<h5>City: </h5>");
-                divAdresse.append(adresse);
-                divContainer.append(divAdresse);
-                divAdresse.attr("class", "apiDivAdresse");
-                adresse.attr("class", "apiAdresse");
-                adresse.append(" " + item.record.fields.city);
+              divAdresse = $("<div></div>");
+              adresse = $("<h5>City: </h5>");
+              divAdresse.append(adresse);
+              divContainer.append(divAdresse);
+              divAdresse.attr("class", "apiDivAdresse");
+              adresse.attr("class", "apiAdresse");
+              adresse.append(" " + item.record.fields.city);
 
-                divPrix = $("<div></div>");
-                prix = $("<h5>Le prix:</h5>");
-                divPrix.append(prix);
-                divContainer.append(divPrix);
-                divPrix.attr("class", "apiDivPrix");
-                prix.attr("class", "apiPrix");
-                prix.append(" " + item.record.fields.pricing_info);
+              divPrix = $("<div></div>");
+              prix = $("<h5>Le prix:</h5>");
+              divPrix.append(prix);
+              divContainer.append(divPrix);
+              divPrix.attr("class", "apiDivPrix");
+              prix.attr("class", "apiPrix");
+              prix.append(" " + item.record.fields.pricing_info);
 
-                divDescription = $("<div></div>");
-                description = $("<h5>Description:</h5>");
-                divDescription.append(description);
-                divContainer.append(divDescription);
-                divDescription.attr("class", "apiDivDescription");
-                description.attr("class", "apiDescription");
-                description.append(" " + item.record.fields.description);
+              divDescription = $("<div></div>");
+              description = $("<h5>Description:</h5>");
+              divDescription.append(description);
+              divContainer.append(divDescription);
+              divDescription.attr("class", "apiDivDescription");
+              description.attr("class", "apiDescription");
+              description.append(" " + item.record.fields.description);
 
-                creLink = $("<a>Le lien vers le site: </a>");
-                creLink.attr("class", "creLink");
-                divContainer.append(creLink);
-                creLink.attr("href", item.record.fields.link);
+              creLink = $("<a target='blank' >Le lien vers le site: </a>");
+              creLink.attr("class", "creLink");
+              divContainer.append(creLink);
+              creLink.attr("href", item.record.fields.link);
 
-            });
+          });
 
-        });
-    });
+      });
+    };
 
-    var apiOpenData = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
-    var dateC = '%22%2C%20%222017%22%20%22mars';
-    var row = '&rows=30';
-    var start = '&start=2';
-    var apiP = '&pretty=false';
-    var apiT = '&timezone=UTC';
-    var input = $("#idSuccess");
 
-    $("#button-address").on("click", function() {
-        divContainer.empty();
-        var url = apiOpenData + input.val() + dateC + row + start + apiP + apiT;
+    $("#buttonSearche").click(fetchEvents);
 
-        $.getJSON(url, function(json) {
-
-            json.records.forEach(function(item) {
-                creImg = $("<img/>");
-                creHref = creImg.attr("src", item.record.fields.image);
-                apiImage = creImg.attr("class", "apiImage");
-                divContainer.append(creImg);
-
-                divTitle = $("<div></div>");
-                title = $("<h5></h5>");
-                divTitle.append(title);
-                divContainer.append(divTitle);
-                divTitle.attr("class", "apiDivTitle");
-                title.attr("class", "apiTitle");
-                title.append(" " + item.record.fields.title);
-
-                divDateStart = $("<div></div>");
-                dateStart = $("<h5>Date de début:</h5>");
-                divDateStart.append(dateStart);
-                divContainer.append(divDateStart);
-                divDateStart.attr("class", "apiDivDateStart");
-                dateStart.attr("class", "apiDateStart");
-                dateStart.append(" " + item.record.fields.date_start);
-
-                divDateEnd = $("<div></div>");
-                dateEnd = $("<h5>Date de fin:</h5>");
-                divDateEnd.append(dateEnd);
-                divContainer.append(divDateEnd);
-                divDateEnd.attr("class", "apiDivDateEnd");
-                dateEnd.attr("class", "apiDateEnd");
-                dateEnd.append(" " + item.record.fields.date_end);
-
-                divAdresse = $("<div></div>");
-                adresse = $("<h5>City: </h5>");
-                divAdresse.append(adresse);
-                divContainer.append(divAdresse);
-                divAdresse.attr("class", "apiDivAdresse");
-                adresse.attr("class", "apiAdresse");
-                adresse.append(" " + item.record.fields.city);
-
-                divPrix = $("<div></div>");
-                prix = $("<h5>Le prix:</h5>");
-                divPrix.append(prix);
-                divContainer.append(divPrix);
-                divPrix.attr("class", "apiDivPrix");
-                prix.attr("class", "apiPrix");
-                prix.append(" " + item.record.fields.pricing_info);
-
-                divDescription = $("<div></div>");
-                description = $("<h5>Description:</h5>");
-                divDescription.append(description);
-                divContainer.append(divDescription);
-                divDescription.attr("class", "apiDivDescription");
-                description.attr("class", "apiDescription");
-                description.append(" " + item.record.fields.description);
-
-                creLink = $("<a>Le lien vers le site: </a>");
-                creLink.attr("class", "creLink");
-                divContainer.append(creLink);
-                creLink.attr("href", item.record.fields.link);
-
-            });
-
-        });
-    });
 
     var timerIn = 200;
     var timerOut = 200;
@@ -169,16 +94,22 @@ $(document).ready(function() {
         $(this).find('> .dropdown-menu').stop(true, true).fadeOut(timerOut);
         $(this).removeClass('open');
     });
+
+    var address = null;
+    getAddress().then(function(address) {
+        console.log(address);
+        var general = "Mars" + ' ' + "2017" + ', ' + (address.postcode  || address.postCode || '') + ', ' + address.city;
+        // var general = (address.postcode  || address.postCode || '') + Date() + ', ' + address.city;
+
+        $('#inputChercher').val(general.replace(/\n/, ' '));
+        fetchEvents();
+    });
+
 });
 
 // Cozy address
 
-var address = null;
-getAddress().then(function(address) {
-    console.log(address);
-    var general = address.postcode + ', ' + address.city;
-    $('#idSuccess').val(general.replace(/\n/, ' '));
-});
+
 
 function getAddress() {
     // Initialise the cozy sdk.

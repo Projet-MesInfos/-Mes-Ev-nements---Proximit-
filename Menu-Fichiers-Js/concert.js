@@ -60,7 +60,7 @@ var glob = function(json) {
       description.attr("class", "apiDescription");
       description.append(" " + item.record.fields.description);
 
-      creLink = $("<a>Le lien vers le site: </a>");
+      creLink = $("<a target='blank' >Le lien vers le site: </a>");
       creLink.attr("class", "creLink");
       divContainer.append(creLink);
       creLink.attr("href", item.record.fields.link);

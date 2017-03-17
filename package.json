@@ -2,7 +2,7 @@
   "name": "Mes-evenements-a-proximite",
   "cozy-type": "static",
   "cozy-displayName": "Mes evenements a proximite ",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rechercher des evenements autour de vos",
   "icon-path": "aniCat.png",
   "cozy-permissions": {
