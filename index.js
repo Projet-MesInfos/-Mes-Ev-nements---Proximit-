@@ -5,7 +5,7 @@ $(document).ready(function() {
     // input
 
     var apiOpenDataa = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
-    var dateA = '%22%2C%20%222017%22%20%22mars';
+    var dateA = '%22%2C%20%222017';
     var roww = '&rows=30';
     var startt = '&start=2';
     var apiPp = '&pretty=false';
