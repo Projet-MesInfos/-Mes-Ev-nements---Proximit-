@@ -5,15 +5,16 @@ $(document).ready(function() {
     // input
 
     var apiOpenDataa = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
+    var dateA = '%22%2C%20%222017%22%20%22mars';
     var roww = '&rows=30';
     var startt = '&start=2';
     var apiPp = '&pretty=false';
-    var apiTt = '&timezone=2017';
+    var apiTt = '&timezone=UTC';
     var inputt = $("#inputChercher");
 
     $("#buttonSearche").on("click", function() {
         divContainer.empty();
-        var urll = apiOpenDataa + inputt.val() + roww + startt + apiPp + apiTt;
+        var urll = apiOpenDataa + inputt.val() + dateA + roww + startt + apiPp + apiTt;
 
         $.getJSON(urll, function(json) {
 
@@ -175,7 +176,7 @@ $(document).ready(function() {
 var address = null;
 getAddress().then(function(address) {
     console.log(address);
-    var general = address.postCode + ', ' + address.city;
+    var general = address.postcode + ', ' + address.city;
     $('#idSuccess').val(general.replace(/\n/, ' '));
 });
 

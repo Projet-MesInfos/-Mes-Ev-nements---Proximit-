@@ -179,82 +179,6 @@ body {
     margin-bottom: 5%;
 }
 
-@media screen and (max-width: 480px) {
-    .titreMesEvent {
-        font-family: 'Grand Hotel', cursive;
-        color: #1F1B4C;
-        font-size: 31px;
-        margin-top: 30%;
-        text-align: center;
-    }
-    #formInput {
-        margin-top: 4%;
-        display: flex;
-        justify-content: center;
-    }
-    #buttonSearche {
-        padding-top: 0.2em;
-        margin-right: -2em;
-    }
-    #div-address-client {
-        margin-top: 22%;
-        margin-left: 10%;
-    }
-    .apiTitle {
-        text-align: center;
-        font-size: 18px;
-        font-family: 'Josefin Sans', sans-serif;
-        color: black;
-        padding-top: 0.3em;
-        width: 61%;
-        height: 120px;
-        overflow: hidden;
-        margin-left: -5em;
-    }
-    .apiImage {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30%;
-        margin-left: 2%;
-        margin-top: 2%;
-        width: 23em;
-        height: 14em;
-    }
-    .apiDateStart {
-        font-size: 12px;
-        margin-right: 8em;
-        margin-top: -3em;
-    }
-    .apiDateEnd {
-        font-size: 12px;
-        margin-right: 8em;
-    }
-    .apiAdresse {
-        font-size: 10px;
-    }
-    .apiAdresse {
-        font-size: 13px;
-        margin-left: -7em;
-    }
-    .apiPrix {
-        width: 60%;
-        height: 20px;
-        overflow: hidden;
-        text-align: center;
-        font-size: 12px;
-        margin-left: -9em;
-    }
-    .apiDescription {
-        display: none;
-    }
-    .creLink {
-        display: flex;
-        justify-content: center;
-        margin-left: -8%;
-        margin-top: -10%;
-        margin-bottom: 10%;
-    }
-}
 
 @media only screen and (max-width: 568px) and (min-width:320px) {
     .apiDateEnd {
@@ -269,9 +193,9 @@ body {
         display: flex;
         justify-content: center;
         margin-bottom: 30%;
-        margin-left: 10%;
+        margin-left: 1%;
         margin-top: 2%;
-        width: 16em;
+        width: 20em;
         height: 14em;
     }
     .apiPrix {
@@ -292,14 +216,73 @@ body {
     .titreMesEvent {
         font-family: 'Grand Hotel', cursive;
         color: #1F1B4C;
-        font-size: 29px;
+        font-size: 27px;
         margin-top: 30%;
         text-align: center;
     }
+    .apiDivTitle {
+    display: flex;
+    justify-content: center;
+    margin-top: -26%;
+    margin-bottom: 22%;
+    margin-left: 3%;
+}
     #div-address-client {
         margin-top: 22%;
         margin-left: 4%;
     }
+    .apiDivDateStart {
+    display: flex;
+    justify-content: center;
+    margin-left: 17%;
+    margin-top: -33%;
+    margin-bottom: 22%;
+}
+.apiDivDateEnd {
+    display: flex;
+    justify-content: center;
+    margin-left: 17%;
+    margin-top: -25%;
+    margin-bottom: 22%;
+}
+.apiDivAdresse {
+    display: flex;
+    justify-content: center;
+    margin-left: 2%;
+    margin-top: -23%;
+    margin-bottom: 17%;
+}
+.apiDivPrix {
+    display: flex;
+    justify-content: center;
+    margin-left: 21%;
+    margin-top: -20%;
+    margin-bottom: 15%;
+}
+.apiDescription {
+  display: none;
+}
+.apiTitle {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: black;
+    padding-top: 0.3em;
+    width: 68%;
+    height: 100px;
+    overflow: hidden;
+}
+#formInput {
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    margin-left: 7px;
+}
+#inputChercher {
+    width: 63%;
+    height: 2.3em;
+    z-index: 100;
+}
 }
 
 @media only screen and (max-width: 667px) and (min-width:375px) {
@@ -337,7 +320,7 @@ body {
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
     .apiImage {
         margin-left: 5%;
-        margin-top: 5%;
+        margin-top: 9%;
         width: 28em;
         height: 27em;
     }
@@ -362,7 +345,7 @@ body {
         display: flex;
         justify-content: center;
         margin-left: 53%;
-        margin-top: -31%;
+        margin-top: -27%;
         margin-bottom: 22%;
     }
     .apiDivDateEnd {
@@ -386,19 +369,15 @@ body {
         margin-top: -17%;
         margin-bottom: 15%;
     }
-    .apiDivDescription {
-        display: flex;
-        justify-content: center;
-        margin-left: 52%;
-        margin-top: -14.5%;
-        margin-bottom: 13%;
+    .apiDescription {
+        display: none;
     }
     .creLink {
         display: flex;
         justify-content: center;
         margin-left: 51%;
-        margin-top: -14%;
-        margin-bottom: 14%;
+        margin-top: -12%;
+        margin-bottom: 10%;
     }
 }
 
@@ -408,11 +387,11 @@ body {
         justify-content: center;
         margin-left: 50%;
         margin-top: -14%;
-        margin-bottom: 10%;
+        margin-bottom: 2%;
     }
     .apiImage {
         margin-left: 7%;
-        margin-top: 4%;
+        margin-top: 8%;
         margin-bottom: 7%;
         width: 28em;
         height: 27em;
@@ -425,15 +404,16 @@ body {
         margin-left: 53%;
     }
     .apiTitle {
-        text-align: center;
-        font-size: 24px;
-        font-family: 'Josefin Sans', sans-serif;
-        color: black;
-        padding-top: 0.3em;
-        width: 78%;
-        height: 120px;
-        overflow: hidden;
-    }
+      text-align: center;
+      font-size: 23px;
+      font-family: 'Josefin Sans', sans-serif;
+      color: black;
+      padding-top: 0.3em;
+      width: 78%;
+      height: 120px;
+      overflow: hidden;
+      line-height: 30px;
+  }
     .apiDivDescription {
         display: none;
     }
@@ -448,72 +428,3 @@ body {
     background-color: #1A1A1A;
 }
 }
-
-/*@media only screen and (max-width: 1920px) and (min-width:1366px){
-  .navbar-inner {
-      margin-left: 16%;
-      margin-top: 1%;
-  }
-  #main-nav {
-  z-index: 1001;
-  height: 13%;
-  padding: 1%;
-  background-color: #1A1A1A;
-}
-#div-address-client {
-    margin-top: 30%;
-    margin-left: 14%;
-}
-.titreMesEvent {
-    font-family: 'Grand Hotel', cursive;
-    color: #1F1B4C;
-    font-size: 4.5em;
-    text-align: center;
-    margin-top: 21%;
-}
-
-}
-.apiDivTitle {
-
-    display: flex;
-    justify-content: center;
-    margin-top: -35%;
-    margin-bottom: 19%;
-    margin-left: 37%;
-}
-.apiDivDateStart {
-    display: flex;
-    justify-content: center;
-    margin-left: 37%;
-    margin-top: -25%;
-    margin-bottom: 22%;
-}
-.apiDivDateEnd {
-    display: flex;
-    justify-content: center;
-    margin-left: 36%;
-    margin-top: -22%;
-    margin-bottom: 19%;
-}
-.apiDivAdresse {
-    display: flex;
-    justify-content: center;
-    margin-left: 37%;
-    margin-top: -19%;
-    margin-bottom: 17%;
-}
-.apiDivPrix {
-    display: flex;
-    justify-content: center;
-    margin-left: 39%;
-    margin-top: -17%;
-    margin-bottom: 15%;
-}
-.creLink {
-    display: flex;
-    justify-content: center;
-    margin-left: 40%;
-    margin-top: -14%;
-    margin-bottom: 7%;
-}
-}*/
