@@ -1,88 +1,59 @@
+
 $(document).ready(function() {
 
     var divContainer = $("#DivDomApi");
 
-    // input
+// input
 
-    var apiOpenDataa = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
-    var roww = '&rows=30';
-    var startt = '&start=2';
-    var apiPp = '&pretty=false';
-    var apiTt = '&timezone=UTC';
-    var inputt = $("#inputChercher");
+      var apiOpenData = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
+      var row = '&rows=30';
+      var apiP = '&pretty=false';
+      var apiT = '&timezone=UTC';
+      var input = $("#inputChercher");
 
-    var fetchEvents = function() {
-      divContainer.empty();
-      var urll = apiOpenDataa + inputt.val() + roww + startt + apiPp + apiTt;
+      $("#buttonSearche").on("click", function() {
+        divContainer.empty();
+          var url = apiOpenData + input.val() + row + apiP + apiT;
 
-      $.getJSON(urll, function(json) {
+          $.getJSON(url, function(json) {
 
-          json.records.forEach(function(item) {
+            json.records.forEach(function(item) {
+              var itemContainer = $("<div class='evenements row'></div>");
+              itemContainer.html(`
+                <div class="col-md-5 col-xs-12" >
+                  <div id="Api-Image" ></div>
+                </div>
+                <div class="col-md-7 col-xs-12" id="Details">
+                  <div id="Api-Title" class="row"></div>
+                  <div id="ApiDate-Start" class="row"></div>
+                  <div id="ApiDate-End" class="row"></div>
+                  <div id="Api-Adresse" class="row"></div>
+                  <div id="Api-Prix" class="row"></div>
+                  <div id="Api-Description" class="row"></div>
+                </div>
+              `);
+
+              var imageApi = itemContainer.find('#Api-Image');
               creImg = $("<img/>");
-              creHref = creImg.attr("src", item.record.fields.image);
-              apiImage = creImg.attr("class", "apiImage");
-              divContainer.append(creImg);
+              creImg.attr("src", item.record.fields.image);
+              creImg.appendTo(imageApi);
 
-              divTitle = $("<div></div>");
-              title = $("<h5></h5>");
-              divTitle.append(title);
-              divContainer.append(divTitle);
-              divTitle.attr("class", "apiDivTitle");
-              title.attr("class", "apiTitle");
-              title.append(" " + item.record.fields.title);
+              itemContainer.find("#Api-Title").html("<h3>" + item.record.fields.title + "</h3>");
 
-              divDateStart = $("<div></div>");
-              dateStart = $("<h5>Date de début:</h5>");
-              divDateStart.append(dateStart);
-              divContainer.append(divDateStart);
-              divDateStart.attr("class", "apiDivDateStart");
-              dateStart.attr("class", "apiDateStart");
-              dateStart.append(" " + item.record.fields.date_start);
+              itemContainer.find("#ApiDate-Start").html("<h5>Date de début:" + item.record.fields.date_start + "</h5>")
 
-              divDateEnd = $("<div></div>");
-              dateEnd = $("<h5>Date de fin:</h5>");
-              divDateEnd.append(dateEnd);
-              divContainer.append(divDateEnd);
-              divDateEnd.attr("class", "apiDivDateEnd");
-              dateEnd.attr("class", "apiDateEnd");
-              dateEnd.append(" " + item.record.fields.date_end);
+              itemContainer.find("#ApiDate-End").html("<h5>Date de fin:" + item.record.fields.date_end + "</h5>");
 
-              divAdresse = $("<div></div>");
-              adresse = $("<h5>City: </h5>");
-              divAdresse.append(adresse);
-              divContainer.append(divAdresse);
-              divAdresse.attr("class", "apiDivAdresse");
-              adresse.attr("class", "apiAdresse");
-              adresse.append(" " + item.record.fields.city);
+              itemContainer.find("#Api-Adresse").html("<h5>City:" + item.record.fields.city + "</h5>")
 
-              divPrix = $("<div></div>");
-              prix = $("<h5>Le prix:</h5>");
-              divPrix.append(prix);
-              divContainer.append(divPrix);
-              divPrix.attr("class", "apiDivPrix");
-              prix.attr("class", "apiPrix");
-              prix.append(" " + item.record.fields.pricing_info);
+              itemContainer.find("#Api-Prix").html("<h5>Le prix:" + item.record.fields.pricing_info + "</h5>")
 
-              divDescription = $("<div></div>");
-              description = $("<h5>Description:</h5>");
-              divDescription.append(description);
-              divContainer.append(divDescription);
-              divDescription.attr("class", "apiDivDescription");
-              description.attr("class", "apiDescription");
-              description.append(" " + item.record.fields.description);
+              itemContainer.find("#Api-Description").html("<h6>Description:" + item.record.fields.description + "</h6><p><a href='"+ item.record.fields.link + "'> Plus de details  </a></p>");
 
-              creLink = $("<a target='blank' >Le lien vers le site: </a>");
-              creLink.attr("class", "creLink");
-              divContainer.append(creLink);
-              creLink.attr("href", item.record.fields.link);
-
+              divContainer.append(itemContainer);
+            });
           });
-
       });
-    };
-
-
-    $("#buttonSearche").click(fetchEvents);
 
 
     var timerIn = 200;
@@ -94,62 +65,56 @@ $(document).ready(function() {
         $(this).find('> .dropdown-menu').stop(true, true).fadeOut(timerOut);
         $(this).removeClass('open');
     });
-
-    var address = null;
-    getAddress().then(function(address) {
-        console.log(address);
-        var general = "Mars" + ' ' + "2017" + ', ' + (address.postcode  || address.postCode || '') + ', ' + address.city;
-        // var general = (address.postcode  || address.postCode || '') + Date() + ', ' + address.city;
-
-        $('#inputChercher').val(general.replace(/\n/, ' '));
-        fetchEvents();
-    });
-
 });
+
 
 // Cozy address
 
+var address = null;
+   getAddress().then(function(address) {
+     console.log(address);
+     $('#inputChercher').val(address.formated.replace(/\n/, ' '));
+   });
 
 
-function getAddress() {
+   function getAddress() {
+
     // Initialise the cozy sdk.
     cozy.client.init();
-    return getMaifAddress().catch(getEDFAddress);
+
+    return getMaifAddress();
+      .catch(getEDFAddress);
 }
 
-function getEDFAddress() {
+   function getEDFAddress() {
     // create an index, for the Client doctype, on the vendor field.
-    return cozy.client.data.defineIndex('Client', ['vendor']).then(function(index) {
+    return cozy.client.data.defineIndex('Client', ['vendor'])
+      .then(function(index) {
         // Query the cozy database, using the previous index, to found the data.
-        return cozy.client.data.query(index, {
-            selector: {
-                vendor: 'EDF'
-            }
-        });
-    }).then(function(data) {
+        return cozy.client.data.query(index, { selector: { vendor: 'EDF' }});
+      })
+      .then(function(data) {
         if (data.length === 0) {
-            return Promise.reject(null);
+          return Promise.reject(null);
         }
         // extract the data we need.
         return data[0].address;
-    });
-}
+      });
+   }
 
-function getMaifAddress() {
-    return cozy.client.data.defineIndex('Maifuser', ['_id']).then(function(index) {
-        return cozy.client.data.query(index, {
-            selector: {
-                _id: ''
-            }
-        });
-    }).then(function(data) {
+   function getMaifAddress() {
+    return cozy.client.data.defineIndex('Maifuser', ['_id'])
+      .then(function(index) {
+        return cozy.client.data.query(index, { selector: { _id: '' }});
+      })
+      .then(function(data) {
         if (data.length === 0) {
-            return Promise.reject(null);
+          return Promise.reject(null);
         }
 
         var address = data[0].profile.MesInfos.foyer.address;
-        // address.formated = address.street + '\n' + adress.postcode + ' ' + address.city;
+        address.formated = address.street + '\n' + adress.postcode + ' ' + address.city;
         return address
-    });
+      });
 
-}
+   }

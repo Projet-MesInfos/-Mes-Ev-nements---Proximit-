@@ -7,63 +7,39 @@ $(document).ready(function() {
 
 var glob = function(json) {
      json.records.forEach(function(item) {
-      creImg = $("<img/>");
-      creHref = creImg.attr("src", item.record.fields.image);
-      apiImage = creImg.attr("class", "apiImage");
-      divContainer.append(creImg);
+      var itemContainer = $("<div class='evenements row'></div>");
+      itemContainer.html(`
+        <div class="col-md-5 col-xs-12" >
+             <div id="Api-Image" ></div>
+        </div>
+        <div class="col-md-7 col-xs-12" id="Details">
+           <div id="Api-Title" class="row"></div>
+           <div id="ApiDate-Start" class="row"></div>
+           <div id="ApiDate-End" class="row"></div>
+           <div id="Api-Adresse" class="row"></div>
+           <div id="Api-Prix" class="row"></div>
+           <div id="Api-Description" class="row"></div>
+        </div>
+        `);
 
-      divTitle = $("<div></div>");
-      title = $("<h5></h5>");
-      divTitle.append(title);
-      divContainer.append(divTitle);
-      divTitle.attr("class", "apiDivTitle");
-      title.attr("class", "apiTitle");
-      title.append(" " + item.record.fields.title);
+     var imageApi = itemContainer.find('#Api-Image');
+     creImg = $("<img/>");
+     creImg.attr("src", item.record.fields.image);
+     creImg.appendTo(imageApi);
 
-      divDateStart = $("<div></div>");
-      dateStart = $("<h5>Date de début:</h5>");
-      divDateStart.append(dateStart);
-      divContainer.append(divDateStart);
-      divDateStart.attr("class", "apiDivDateStart");
-      dateStart.attr("class", "apiDateStart");
-      dateStart.append(" " + item.record.fields.date_start);
+     itemContainer.find("#Api-Title").html("<h3>" + item.record.fields.title + "</h3>");
 
-      divDateEnd = $("<div></div>");
-      dateEnd = $("<h5>Date de fin:</h5>");
-      divDateEnd.append(dateEnd);
-      divContainer.append(divDateEnd);
-      divDateEnd.attr("class", "apiDivDateEnd");
-      dateEnd.attr("class", "apiDateEnd");
-      dateEnd.append(" " + item.record.fields.date_end);
+     itemContainer.find("#ApiDate-Start").html("<h5>Date de début:" + item.record.fields.date_start + "</h5>")
 
-      divAdresse = $("<div></div>");
-      adresse = $("<h5>City: </h5>");
-      divAdresse.append(adresse);
-      divContainer.append(divAdresse);
-      divAdresse.attr("class", "apiDivAdresse");
-      adresse.attr("class", "apiAdresse");
-      adresse.append(" " + item.record.fields.city);
+     itemContainer.find("#ApiDate-End").html("<h5>Date de fin:" + item.record.fields.date_end + "</h5>");
 
-      divPrix = $("<div></div>");
-      prix = $("<h5>Le prix:</h5>");
-      divPrix.append(prix);
-      divContainer.append(divPrix);
-      divPrix.attr("class", "apiDivPrix");
-      prix.attr("class", "apiPrix");
-      prix.append(" " + item.record.fields.pricing_info);
+     itemContainer.find("#Api-Adresse").html("<h5>City:" + item.record.fields.city + "</h5>")
 
-      divDescription = $("<div></div>");
-      description = $("<h5>Description:</h5>");
-      divDescription.append(description);
-      divContainer.append(divDescription);
-      divDescription.attr("class", "apiDivDescription");
-      description.attr("class", "apiDescription");
-      description.append(" " + item.record.fields.description);
+     itemContainer.find("#Api-Prix").html("<h5>Le prix:" + item.record.fields.pricing_info + "</h5>")
 
-      creLink = $("<a target='blank' >Le lien vers le site: </a>");
-      creLink.attr("class", "creLink");
-      divContainer.append(creLink);
-      creLink.attr("href", item.record.fields.link);
+     itemContainer.find("#Api-Description").html("<h6>Description:" + item.record.fields.description + "</h6><p><a href='"+ item.record.fields.link + "'> Plus de details  </a></p>");
+
+     divContainer.append(itemContainer);
   });
 };
 
@@ -88,7 +64,7 @@ var glob = function(json) {
 
     $("#concertVingtEuro").on("click", function() {
       divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2220%E2%82%AC%22%2C%2230%E2%82%AC%22&rows=30&start=8&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%2220%E2%82%AC%22%2C%2230%E2%82%AC%22&rows=30&start=5&pretty=false&timezone=UTC", function(json) {
           glob(json);      });  });
 
     $("#concertPlus").on("click", function() {
@@ -118,17 +94,17 @@ var glob = function(json) {
 
     $("#concertFunk").on("click", function() {
       divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Funk%22&rows=30&start=7&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Funk%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
           glob(json);        });  });
 
     $("#concertBlues").on("click", function() {
       divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Blues%22&rows=30&&start=4pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Blues%22&rows=30&pretty=false&timezone=UTC", function(json) {
           glob(json);        });  });
 
     $("#concertPop").on("click", function() {
       divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Pop%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22concert%22%2C%20%222017%22%2C%20%22Pop%22&rows=30&pretty=false&timezone=UTC", function(json) {
           glob(json);        });    });
 
 });
