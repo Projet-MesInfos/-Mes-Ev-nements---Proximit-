@@ -37,7 +37,7 @@ var glob = function(json) {
 
      itemContainer.find("#Api-Prix").html("<h5>Le prix:" + item.record.fields.pricing_info + "</h5>")
 
-     itemContainer.find("#Api-Description").html("<h6>Description:" + item.record.fields.description + "</h6><p><a href='"+ item.record.fields.link + "'> Plus de details  </a></p>");
+     itemContainer.find("#Api-Description").html("<h5>Description:" + item.record.fields.description + "</h5><p><a href='"+ item.record.fields.link + "'> Plus de details  </a></p>");
 
      divContainer.append(itemContainer);
   });

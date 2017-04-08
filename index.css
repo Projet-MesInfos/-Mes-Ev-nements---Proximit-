@@ -3,34 +3,25 @@ body {
     padding: 0;
     /*height: 77vh;*/
 }
-header{
+
+header {
     margin-top: auto;
     height: 100vh;
     /*height: 80vh;*/
 }
+
 .titreMesEvent {
     font-family: 'Grand Hotel', cursive;
     color: #1F1B4C;
     font-size: 4.5em;
-    margin-top: 12.5%;
+    margin-top: 10.5%;
     text-align: center;
-}
-
-@media screen and (max-width: 480px) {
-    .titreMesEvent {
-        font-family: 'Grand Hotel', cursive;
-        color: #1F1B4C;
-        font-size: 2.5em;
-        margin-top: 82%;
-        text-align: center;
-    }
 }
 
 .navbar-inner {
     margin-left: 20%;
     margin-top: 0.8%;
 }
-
 
 #main-nav {
     z-index: 1001;
@@ -49,10 +40,10 @@ header{
     width: 29%;
     height: 2.3em;
     z-index: 100;
-
 }
-#buttonSearche{
-  margin-left: -2.9em;
+
+#buttonSearche {
+    margin-left: -2.9em;
 }
 
 .glyphicon-search {
@@ -86,91 +77,216 @@ header{
 }
 
 #DivDomApi {
-    margin-top: 4%;
+    margin-top: 27%;
 }
 
 @media margin {
-  -webkit-margin: 2em;
-  -moz-margin: 2em;
-  -ms-margin: 2em;
-  margin: 2em;
+    -webkit-margin: 2em;
+    -moz-margin: 2em;
+    -ms-margin: 2em;
+    margin: 2em;
 }
 
-.evenements {
-  margin: 2vmin;
-  height: 71vh;
-  padding: 0;
-  font-size: 0.4vmax;
+.evenement {
+    margin: 2vmin;
+    height: 71vh;
+    padding: 0;
+    font-size: 0.4vmax;
 }
 
-#Api-Image{
-  height: 70vh;
-  background-color: #D3D3D3;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items:  center;
+a {
+    color: #0088cc;
+    text-decoration: none;
+    font-size: 15px;
 }
 
-#Api-Image img{
-  width: auto;
-  min-height: auto;
-  max-height: 69vh;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+#Api-Image {
+    height: 60vh;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
 
-#Details{
-    height: 70vh;
-    background-color: #D3D3D3;
+#Api-Image img {
+    height: 55vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#Details {
+    height: 61vh;
+    background-color: white;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-#Api-Title{
+#Api-Title {
     height: 30%;
-    /*background-color: pink;*/
     margin: 0;
+    margin-top: 19px;
     padding: 0;
 }
 
-#ApiDate-Start{
+#ApiDate-Start {
     height: 10%;
-    /*background-color: grey;*/
     margin: 0;
+    margin-top: -16px;
     padding: 0;
 }
 
-#ApiDate-End{
+#ApiDate-End {
     height: 10%;
     /*background-color: coral;*/
     margin: 0;
     padding: 0;
 }
 
-#Api-Adresse{
+#Api-Adresse {
     height: 10%;
-    /*background-color: blue;*/
     margin: 0;
     padding: 0;
 }
 
-#Api-Prix{
+#Api-Prix {
     height: 10%;
-    /*background-color: white;*/
     margin: 0;
     padding: 0;
 }
 
-#Api-Description{
+#Api-Description {
     height: 30%;
-    /*background-color: turquoise;*/
     margin: 0;
     padding: 0;
 }
 
 #Api-Description p {
-  font-size: 0.7vmax;
+    font-size: 0.7vmax;
+}
+
+
+/*media query sur chrome*/
+
+@media only screen and (max-width: 568px) and (min-width:320px) {
+    .titreMesEvent {
+        font-size: 2.1em;
+    }
+    #inputChercher {
+        width: 82%;
+    }
+    h3 {
+        font-size: 16.5px !important;
+    }
+    #Api-Image img {
+        height: 47vh;
+    }
+    #Api-Image {
+        margin-top: -5em;
+        margin-left: -2em;
+    }
+    #Api-Title {
+        margin-top: -36px;
+    }
+    #Details {
+        margin-left: -1em;
+    }
+}
+
+@media only screen and (max-width: 667px) and (min-width:375px) {
+    .titreMesEvent {
+        font-size: 2.5em;
+    }
+    #inputChercher {
+        width: 72%;
+    }
+    #Api-Image img {
+        height: 46vh;
+    }
+    #Api-Image {
+        margin-top: -5em;
+    }
+    #Details {
+        margin-left: -1em;
+    }
+}
+
+@media only screen and (max-width: 736px) and (min-width:414px) {
+    .titreMesEvent {
+        font-size: 2.5em;
+        margin-top: 10.5%;
+    }
+    #inputChercher {
+        width: 64%;
+    }
+    h3 {
+        font-size: 12.5px;
+    }
+    #ApiDate-Start {
+        margin-top: -47px;
+    }
+    #Api-Image {
+        margin-top: -6em;
+    }
+    a {
+        font-size: 3em;
+    }
+    #Api-Image img {
+        height: 47vh;
+    }
+    #Api-Title {
+        margin-top: -26px;
+    }
+    #Api-Image {
+        margin-top: -7em;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    #inputChercher {
+        width: 56%;
+    }
+    #ApiDate-Start {
+        margin-top: -85px;
+    }
+    #Details {
+        height: 53vh;
+        margin-bottom: -15%;
+    }
+    h6 {
+        font-size: 13.9px;
+    }
+    a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1366px) and (min-width:1024px) {
+    #Api-Image img {
+        height: 30vh;
+        width: 100%;
+    }
+    #Api-Image {
+        height: 34vh;
+    }
+    #Details {
+        height: 34vh;
+    }
+    .navbar-inner {
+        margin-left: 6%;
+        margin-top: 1.8%;
+    }
+    #main-nav {
+        z-index: 1001;
+        height: 7%;
+        padding: 1%;
+        background-color: #1A1A1A;
+    }
+    .titreMesEvent {
+        font-size: 4.5em;
+        margin-top: 12.5%;
+    }
 }
