@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+
+       // button maison
+        $("#btn-maison").on("click", function(){
+          window.location.reload();
+         });
+
+      // keypresse enter-input
     $("#form-keypress").submit(function(event) {
         if ($("input:first").val() === "correct") {}
         event.preventDefault();
@@ -18,7 +25,6 @@ $(document).ready(function() {
 
     // chercher l api  et l afficher
     var divContainer = $("#DivDomApi");
-
     // input
     var apiOpenDataa = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
     var roww = '&rows=30';

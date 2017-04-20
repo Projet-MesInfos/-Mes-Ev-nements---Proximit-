@@ -1,13 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    /*height: 77vh;*/
 }
 
 header {
     margin-top: auto;
     height: 100vh;
-    /*height: 80vh;*/
 }
 
 .titreMesEvent {
@@ -17,17 +15,26 @@ header {
     margin-top: 10.5%;
     text-align: center;
 }
+.logo-chat{
+  margin-top: -0.8%;
+}
+#btn-maison{
+  font-size: 17px !important;
+}
 
 .navbar-inner {
-    margin-left: 20%;
-    margin-top: 0.8%;
+    margin-top: -3.7%;
+}
+
+#cont{
+  padding-left: 16em;
 }
 
 #main-nav {
     z-index: 1001;
     height: 11%;
     padding: 1%;
-    background-color: #1A1A1A;
+    background-color: #FFFFFF !important;
 }
 
 #formInput {
@@ -48,14 +55,14 @@ header {
 
 .glyphicon-search {
     z-index: 222;
-    color: rgb(66, 133, 244);
+    color: #1F1B4C;
 }
 
 
 /*Barre de recherche */
 
 .stylish-input-group .input-group-addon {
-    background: white !important;
+    background: #FFFFFF !important;
 }
 
 .stylish-input-group .form-control {
@@ -71,7 +78,7 @@ header {
 }
 
 .linksDrop {
-    color: white;
+    color: black;
     font-size: 17px;
     padding-left: 1.4em;
 }
@@ -179,6 +186,9 @@ a {
     #inputChercher {
         width: 82%;
     }
+    .navbar-inner {
+        margin-top: -17%;
+    }
     h3 {
         font-size: 16.5px !important;
     }
@@ -188,6 +198,9 @@ a {
     #Api-Image {
         margin-top: -5em;
         margin-left: -2em;
+    }
+    #btn-maison{
+      display: none;
     }
     #Api-Title {
         margin-top: -36px;
@@ -201,11 +214,17 @@ a {
     .titreMesEvent {
         font-size: 2.5em;
     }
+    .navbar-inner {
+        margin-top: -17%;
+    }
     #inputChercher {
         width: 72%;
     }
     #Api-Image img {
         height: 46vh;
+    }
+    #btn-maison{
+      display: none;
     }
     #Api-Image {
         margin-top: -5em;
@@ -226,9 +245,16 @@ a {
     h3 {
         font-size: 12.5px;
     }
+    .navbar-inner {
+        margin-top: -17%;
+    }
     #ApiDate-Start {
         margin-top: -47px;
     }
+    #btn-maison{
+      display: none;
+    }
+
     #Api-Image {
         margin-top: -6em;
     }
@@ -257,6 +283,13 @@ a {
         height: 53vh;
         margin-bottom: -15%;
     }
+    #btn-maison{
+      display: none;
+    }
+
+    .navbar-inner {
+        margin-top: -8%;
+    }
     h6 {
         font-size: 13.9px;
     }
@@ -276,9 +309,12 @@ a {
     #Details {
         height: 34vh;
     }
+    #cont{
+      margin-left: -0%;
+      padding-left: 10em;
+    }
     .navbar-inner {
-        margin-left: 6%;
-        margin-top: 1.8%;
+        margin-top: -5%;
     }
     #main-nav {
         z-index: 1001;

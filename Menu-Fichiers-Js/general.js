@@ -42,9 +42,7 @@
     };
 
     $("#cinemaGeneral").on("click", function() {
-
         divContainer.empty();
-
         $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22cin%C3%A9ma%22%2C%20%222017%22%2C%20%22avril%22&rows=30&pretty=false&timezone=UTC", function(json) {
             glob(json);
             $("#inputChercher").empty();

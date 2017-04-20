@@ -42,7 +42,7 @@ $(document).ready(function() {
 
     $("#cityNantes").on("click", function() {
         divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Nantes%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=5&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Nantes%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=6&pretty=false&timezone=UTC", function(json) {
             glob(json);
             $("#inputChercher").empty();
             $("#inputChercher").val('Nantes');
@@ -60,7 +60,7 @@ $(document).ready(function() {
 
     $("#cityMontpellier").on("click", function() {
         divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Montpellier%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=7&pretty=false&timezone=UTC", function(json) {
+        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%20%22Montpellier%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=8&pretty=false&timezone=UTC", function(json) {
             glob(json);
             $("#inputChercher").empty();
             $("#inputChercher").val('Montpellier');
