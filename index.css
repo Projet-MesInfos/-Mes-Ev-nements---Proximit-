@@ -12,7 +12,7 @@ header {
     font-family: 'Grand Hotel', cursive;
     color: #1F1B4C;
     font-size: 4.5em;
-    margin-top: 10.5%;
+    margin-top: -7.5%;
     text-align: center;
 }
 .logo-chat{
@@ -84,7 +84,7 @@ header {
 }
 
 #DivDomApi {
-    margin-top: 27%;
+    margin-top: 2%;
 }
 
 @media margin {
@@ -175,17 +175,30 @@ a {
 #Api-Description p {
     font-size: 0.7vmax;
 }
-
+#map {
+  width: 26%;
+}
+#container-location {
+  width: auto;
+  display: flex;
+  height: 210px;
+  margin-top: 6em;
+  margin-left: 15px;
+}
 
 /*media query sur chrome*/
 
 @media only screen and (max-width: 568px) and (min-width:320px) {
     .titreMesEvent {
         font-size: 2.1em;
+       margin-top: -1.5%;
     }
     #inputChercher {
         width: 82%;
     }
+    #DivDomApi {
+    margin-top: 13%
+}
     .navbar-inner {
         margin-top: -17%;
     }
@@ -208,12 +221,19 @@ a {
     #Details {
         margin-left: -1em;
     }
+    #container-location {
+     display: none;
+}
 }
 
 @media only screen and (max-width: 667px) and (min-width:375px) {
     .titreMesEvent {
         font-size: 2.5em;
+        margin-top: 1em;
     }
+    #DivDomApi {
+    margin-top: 7%;
+}
     .navbar-inner {
         margin-top: -17%;
     }
@@ -232,6 +252,9 @@ a {
     #Details {
         margin-left: -1em;
     }
+    #container-location {
+     display: none;
+}
 }
 
 @media only screen and (max-width: 736px) and (min-width:414px) {
@@ -248,6 +271,9 @@ a {
     .navbar-inner {
         margin-top: -17%;
     }
+    #DivDomApi {
+    margin-top: 13%;
+}
     #ApiDate-Start {
         margin-top: -47px;
     }
@@ -270,6 +296,9 @@ a {
     #Api-Image {
         margin-top: -7em;
     }
+    #container-location {
+     display: none;
+}
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -296,6 +325,16 @@ a {
     a {
         font-size: 16px;
     }
+    #inputChercher {
+    width: 42%;
+}
+    .titreMesEvent {
+    font-size: 41px;
+    margin-top: -11.5%;
+}
+    #container-location {
+    margin-top: -0.2em;
+}
 }
 
 @media only screen and (max-width: 1366px) and (min-width:1024px) {
@@ -323,7 +362,13 @@ a {
         background-color: #1A1A1A;
     }
     .titreMesEvent {
-        font-size: 4.5em;
-        margin-top: 12.5%;
+      font-size: 53px;
+      margin-top: -10.5%;
     }
+    #container-location {
+    margin-top: 6.8em;
+}
+#inputChercher {
+    width: 43%;
+}
 }
