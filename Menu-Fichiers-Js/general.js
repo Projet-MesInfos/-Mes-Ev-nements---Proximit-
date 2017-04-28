@@ -1,150 +1,153 @@
-  var divContainer = $("#DivDomApi");
+var containerApi = $("#container-api");
 
-    // le lien d'api
-    // la filtrages des evenmeents general
+// la template
+var glob = function(json) {
+    json.records.forEach(function(item) {
+        var itemContainer = $("<div class='evenements'></div>");
+        itemContainer.html(`<div class="card">
+            <div id="disc-hidden" class="disc-hidden"></div>
+                <img class="img-fluid image-api" id="image-api" alt="image">
+                <div class="card-block">
+                  <h4 id="title-api"></h4>
+                  <p id="date-api"> </p>
+                  <p id="ville-api"></p>
+                  <p id="prix-api"> </p>
+                </div>
+              </div> <a id="link-api" target='_blank'> <button id="btn" class"btn btn-primar btn-card><i class="fa fa-info-circle" aria-hidden="true"></i></button></a>`);
+        var image = itemContainer.find('#image-api');
+        image.attr("src", item.record.fields.image);
 
-    var glob = function(json) {
-        json.records.forEach(function(item) {
-            var itemContainer = $("<div class='evenements row'></div>");
-            itemContainer.html(`
-        <div class="col-md-5 col-xs-12" >
-             <div id="Api-Image" ></div>
-        </div>
-        <div class="col-md-7 col-xs-12" id="Details">
-           <div id="Api-Title" class="row"></div>
-           <div id="ApiDate-Start" class="row"></div>
-           <div id="ApiDate-End" class="row"></div>
-           <div id="Api-Adresse" class="row"></div>
-           <div id="Api-Prix" class="row"></div>
-           <div id="Api-Description" class="row"></div>
-        </div>
-        `);
+        itemContainer.find("#title-api").html(item.record.fields.title.substring(0, 21));
 
-            var imageApi = itemContainer.find('#Api-Image');
-            creImg = $("<img/>");
-            creImg.attr("src", item.record.fields.image);
-            creImg.appendTo(imageApi);
+        itemContainer.find("#date-api").html("Date:" +
+            " " + item.record.fields.date_start);
 
-            itemContainer.find("#Api-Title").html("<h3>" + item.record.fields.title + "</h3>");
+        itemContainer.find("#ville-api").html("Ville:" +
+            " " + item.record.fields.city);
 
-            itemContainer.find("#ApiDate-Start").html("<h5>Date de début:" + item.record.fields.date_start + "</h5>")
+        itemContainer.find("#prix-api").html("Prix:" +
+            " " + item.record.fields.pricing_info);
 
-            itemContainer.find("#ApiDate-End").html("<h5>Date de fin:" + item.record.fields.date_end + "</h5>");
+        var link = itemContainer.find("#link-api");
+        link.attr("href", item.record.fields.link);
 
-            itemContainer.find("#Api-Adresse").html("<h5>City:" + item.record.fields.city + "</h5>")
+        itemContainer.find("#disc-hidden").html("Ville:" +
+            " " + item.record.fields.description);
 
-            itemContainer.find("#Api-Prix").html("<h5>Le prix:" + item.record.fields.pricing_info + "</h5>")
+        containerApi.append(itemContainer);
 
-            itemContainer.find("#Api-Description").html("<h5>Description:" + item.record.fields.description + "</h5><p><a target='blank' href='" + item.record.fields.link + "'> Plus de details  </a></p>");
+        //  $(".image-api").mouseover(function(event){
+        //     $(".disc-hidden").css("display", "block");
+        // });
 
-            divContainer.append(itemContainer);
-        });
-    };
-
-    $("#cinemaGeneral").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22cin%C3%A9ma%22%2C%20%222017%22%2C%20%22avril%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Toul les cinemas');
-        });
     });
+};
 
-    $("#cinemaGratuit").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22cinema%22%2C%20%222017%22%2C%20%22avril%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Cinema gratuit');
-        });
+// api évenements
+$("#cinemaGeneral").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22cin%C3%A9ma%22%2C%20%222017%22%2C%20%22mai%22&rows=100&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Cinemas');
     });
+});
 
-    $("#theatreGeneral").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22th%C3%A9%C3%A2tre%20%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=1&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Tout les theatres');
-        });
+$("#cinemaGratuit").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22cinema%22%2C%20%222017%22%2C%20%22mai%22%2C%20%22Entr%C3%A9e%20libre%22&rows=100&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Cinema gratuit');
     });
+});
 
-    $("#theatreGratuit").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22th%C3%A9%C3%A2tre%20%22%2C%20%222017%22%2C%20%22avril%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&start=4&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Theatre gratuit');
-        });
+$("#theatreGeneral").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22th%C3%A9%C3%A2tre%20%22%2C%20%222017%22%2C%20%22mai%22&rows=100&start=1&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Théatre');
     });
+});
 
-    $("#spectacleGeneral").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22spectacle%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=4&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Tout les spectacles');
-        });
+$("#theatreGratuit").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22th%C3%A9%C3%A2tre%20%22%2C%20%222017%22%2C%20%22mai%22%2C%20%22Entr%C3%A9e%20libre%22&rows=100&start=4&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Theatre gratuit');
     });
+});
 
-    $("#spectacleGratuit").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22spectacle%22%2C%20%222017%22%2C%20%22avril%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Sepectacle gratuit');
-        });
+$("#spectacleGeneral").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22spectacle%22%2C%20%222017%22%2C%20%22mai%22&rows=100&start=4&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Spectacles');
     });
+});
 
-    $("#danseGeneral").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22danse%20%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Tout les danses');
-        });
+$("#spectacleGratuit").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22spectacle%22%2C%20%222017%22%2C%20%22mai%22%2C%20%22Entr%C3%A9e%20libre%22&rows=100&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Sepectacle gratuit');
     });
+});
 
-    $("#danseGratuit").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22danse%20%22%2C%20%222017%22%2C%20%22avril%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Danse gratuit');
-        });
+$("#danseGeneral").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22danse%20%22%2C%20%222017%22%2C%20%22mai%22&rows=100&start=3&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Danses');
     });
+});
 
-    $("#animationGeneral").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22animation%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=3&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Tout les animations');
-        });
+$("#danseGratuit").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22danse%20%22%2C%20%222017%22%2C%20%22mai%22%2C%20%22Entr%C3%A9e%20libre%22&rows=100&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Danse gratuit');
     });
+});
 
-    $("#animationGratuit").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22animation%22%2C%20%222017%22%2C%20%22avril%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Animation gratuit');
-        });
+$("#animationGeneral").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22animation%22%2C%20%222017%22%2C%20%22mai%22&rows=100&start=3&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Animations');
     });
+});
 
-    $("#sportGeneral").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22sport%22%2C%20%222017%22%2C%20%22avril%22&rows=30&start=5&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Tout les sports');
-        });
+$("#animationGratuit").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22animation%22%2C%20%222017%22%2C%20%22mai%22%2C%20%22Entr%C3%A9e%20libre%22&rows=100&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Animation gratuit');
     });
+});
 
-    $("#sportGratuit").on("click", function() {
-        divContainer.empty();
-        $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22sport%22%2C%20%222017%22%2C%20%22avril%22%2C%20%22Entr%C3%A9e%20libre%22&rows=30&start=2&pretty=false&timezone=UTC", function(json) {
-            glob(json);
-            $("#inputChercher").empty();
-            $("#inputChercher").val('Sport gratuit');
-        });
+$("#sportGeneral").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22sport%22%2C%20%222017%22%2C%20%22mai%22&rows=100&start=5&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Sports');
     });
+});
+
+$("#sportGratuit").on("click", function() {
+    containerApi.empty();
+    $.getJSON("https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=%22%C3%8Ele-de-France%22%2C%20%22sport%22%2C%20%222017%22%2C%20%22mai%22%2C%20%22Entr%C3%A9e%20libre%22&rows=100&start=2&pretty=false&timezone=UTC", function(json) {
+        glob(json);
+        $("#inputChercher").empty();
+        $("#inputChercher").val('Sport gratuit');
+    });
+});

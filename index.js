@@ -1,21 +1,20 @@
 $(document).ready(function() {
 
+    // button maison
+    $("#btn-maison").on("click", function() {
+        window.location.reload();
+    });
 
-       // button maison
-        $("#btn-maison").on("click", function(){
-          window.location.reload();
-         });
-
-      // keypresse enter-input
+    // keypresse enter-input
     $("#form-keypress").submit(function(event) {
-        if ($("input:first").val() === "correct") {}
+        if ($("input:first").val() === "correct")
         event.preventDefault();
     });
 
     // menu hover
     var timerIn = 200;
     var timerOut = 200;
-    $('ul.nav li.dropdown').hover(function() {
+    $('li.nav-item.dropdown').hover(function() {
         $(this).find('> .dropdown-menu').stop(true, true).fadeIn(timerIn);
         $(this).addClass('open');
     }, function() {
@@ -23,72 +22,70 @@ $(document).ready(function() {
         $(this).removeClass('open');
     });
 
-    // chercher l api  et l afficher
-    var divContainer = $("#DivDomApi");
-    // input
+    //  div container
+    var containerApi = $("#container-api");
+
+    // api dans l'input et les paramettres
+
     var apiOpenDataa = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
-    var roww = '&rows=30';
+    var roww = '&rows=100';
     var startt = '&start=2';
     var apiPp = '&pretty=false';
     var apiTt = '&timezone=UTC';
     var inputt = $("#inputChercher");
 
     var fetchEvents = function() {
-        divContainer.empty();
+        containerApi.empty();
         var urll = apiOpenDataa + inputt.val() + roww + startt + apiPp + apiTt;
 
         $.getJSON(urll, function(json) {
 
             json.records.forEach(function(item) {
 
-                var itemContainer = $("<div class='evenements row'></div>");
-                itemContainer.html(`
-                <div class="col-md-5 col-xs-12" >
-                  <div id="Api-Image" ></div>
+                var itemContainer = $("<div class='evenements'></div>");
+                itemContainer.html(`<div class="card">
+                  <div id="disc-hidden"></div>
+                <img id="image-api" class="img-fluid" alt="image">
+                <div class="card-block">
+                  <h4 id="title-api"></h4>
+                  <p id="date-api"> </p>
+                  <p id="ville-api"></p>
+                  <p id="prix-api"> </p>
                 </div>
-                <div class="col-md-7 col-xs-12" id="Details">
-                  <div id="Api-Title" class="row"></div>
-                  <div id="ApiDate-Start" class="row"></div>
-                  <div id="ApiDate-End" class="row"></div>
-                  <div id="Api-Adresse" class="row"></div>
-                  <div id="Api-Prix" class="row"></div>
-                  <div id="Api-Description" class="row"></div>
-                </div>
-              `);
+              </div> <a id="link-api" target='_blank'> <button id="btn" class"btn btn-primar btn-card><i class="fa fa-info-circle" aria-hidden="true"></i></button></a>`);
 
-                var imageApi = itemContainer.find('#Api-Image');
-                creImg = $("<img/>");
-                creImg.attr("src", item.record.fields.image);
-                creImg.appendTo(imageApi);
+                var image = itemContainer.find('#image-api');
+                image.attr("src", item.record.fields.image);
 
-                itemContainer.find("#Api-Title").html("<h3>" + item.record.fields.title + "</h3>");
+                itemContainer.find("#title-api").html(item.record.fields.title.substring(0, 21));
 
-                itemContainer.find("#ApiDate-Start").html("<h5>Date de début:" + item.record.fields.date_start + "</h5>")
+                itemContainer.find("#date-api").html("Date:" +
+                    " " + item.record.fields.date_start);
 
-                itemContainer.find("#ApiDate-End").html("<h5>Date de fin:" + item.record.fields.date_end + "</h5>");
+                itemContainer.find("#ville-api").html("Ville:" +
+                    " " + item.record.fields.city);
 
-                itemContainer.find("#Api-Adresse").html("<h5>City:" + item.record.fields.city + "</h5>")
+              itemContainer.find("#prix-api").html("Prix:" +
+                    " " + item.record.fields.pricing_info);
+                var link = itemContainer.find("#link-api");
+                link.attr("href", item.record.fields.link);
 
-                itemContainer.find("#Api-Prix").html("<h5>Le prix:" + item.record.fields.pricing_info + "</h5>")
-
-                itemContainer.find("#Api-Description").html("<h5>Description:" + item.record.fields.description + "</h5><p><a  target='blank' href='" + item.record.fields.link + "'> Plus de details  </a></p>");
-
-                divContainer.append(itemContainer);
+                containerApi.append(itemContainer);
             });
         });
     }
 
     $("#buttonSearche").click(fetchEvents);
 
-    // chercher l'adresse chient sur cozy
+    // chercher l'adresse sur la plate-forme de cozy
 
     var address = null;
     getAddress().then(function(address) {
-        var general = "Avril" +
+        var general = "Mai" +
         ' ' +
         "2017" +
         ', ' + (address.postcode || address.postCode || '') + ', ' + address.city;
-        // var general = (address.postcode  || address.postCode || '') + Date() + ', ' + address.city;
+
         $('#inputChercher').val(general.replace(/\n/, ' '));
         fetchEvents();
     });

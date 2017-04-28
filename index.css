@@ -1,374 +1,107 @@
-body {
-    margin: 0;
-    padding: 0;
+
+body { margin: 0; padding: 0; height: 105vh; background-image: url('https://cdn.pixabay.com/photo/2013/08/25/14/40/wall-175686_960_720.jpg');
+background-size: cover;
 }
 
-header {
-    margin-top: auto;
-    height: 100vh;
-}
+/*navbar*/
+.bg-faded { background-color: #580A09 !important;}
+.navbar{position: fixed !important; width: 100%; top: 0; left: 0; z-index: 1000;}
+.navbar-collapse { padding-left: 14% !important;}
+.navbar-light .navbar-nav .nav-link { padding: 14px !important; color: #fff !important;
+ font-size: 16px; font-family:'Roboto Slab', serif;}
+.navbar-light .navbar-nav .nav-link:hover{color: #f56a6a !important; }
+.dropdown-item { color:#1F1B4C !important; font-family:'Roboto Slab', serif; font-size: 14px;}
+.navbar-toggler {background-color: #fff !important;}
+.dropdown-item:hover{ color: #f56a6a !important;}
+.disc-hidden { width: 290px; height: 250px; background: rgba(0, 0, 0, 0.5) !important;
+ position: absolute; left: 4px; top: 5px; z-index: 1000; font-size: 16px; color: #fff;
+ padding: 12px; display: none;}
+ #btn-maison {font-size: 17px !important; cursor: pointer;}
+ .logo-chat {width: 100px; z-index: 1000; margin-left: 7.2%;}
+/*#image-api:hover + #disc-hidden{
+  display: block;
+}*/
 
-.titreMesEvent {
-    font-family: 'Grand Hotel', cursive;
-    color: #1F1B4C;
-    font-size: 4.5em;
-    margin-top: -7.5%;
-    text-align: center;
-}
-.logo-chat{
-  margin-top: -0.8%;
-}
-#btn-maison{
-  font-size: 17px !important;
-}
+    /*header*/
+#map {width: 21%;}
+#container-location{width: auto;display: flex; justify-content: flex-start; height: 128px;
+margin-left: 8%; margin-top: 1em; visibility: hidden;}
+.titreMesEvent {font-family: 'Grand Hotel', cursive; color: #eceeef; font-size: 67px;      margin-top: 6.5%; text-align: center;}
+#form-keypress {display: flex; justify-content: center; margin-top: -1em; margin-bottom: 4em;}
+#inputChercher {height: 33px; z-index: 100; border-radius: 19px; padding-left: 12px;
+margin-top: 2em; width: 32em;}
+.form-control{font-size: 15px !important;}
+#buttonSearche {margin-left: -2.9em; font-size: 14px; margin-top: 38px;}
 
-.navbar-inner {
-    margin-top: -3.7%;
-}
+    /*Barre de recherche */
+.glyphicon-search {z-index: 222; color: #0275d8; border-right: 0; box-shadow: 0 0 0;
+ border-color: #ccc; height: auto; border: 0; background: transparent;}
 
-#cont{
-  padding-left: 16em;
-}
+    /*evenements cards*/
+#container-api {display: flex; justify-content: center; background-color: #000;}
+.card {width: 300px; border-radius: 0; padding: 5px;}
+.card:hover {box-shadow: 1px 1px 1px 1px #888888;}
+#image-api {width: 300px; height: 250px;}
+#image-api:hover {box-shadow: 1px 1px 1px 1px #888888;}
+.card-text:last-child {width: 300px;}
+.card-footer:last-child {width: 300px;}
+.evenements {margin: 0.5em;}
+#title-api {font-family: 'Fjalla One', sans-serif; font-size: 26px; margin-top: 8px;}
+#title-api:hover {box-shadow: 1px 1px 1px 1px #888888;}
+#date-api {font-family: 'Fjalla One', sans-serif; font-size: 1.4em; margin-top: 14px; color: #f56a6a;}
+#date-api:hover {box-shadow: 1px 1px 1px 1px #888888;}
+#ville-api {font-family: 'Fjalla One', sans-serif; font-size: 1.4em;}
+#ville-api:hover {box-shadow: 1px 1px 1px 1px #888888;}
+#prix-api {font-family: 'Fjalla One', sans-serif; font-size: 1.4em; margin-bottom: 25px;
+overflow: hidden; height: 22px;}
+#prix-api:hover {box-shadow: 1px 1px 1px 1px #888888;}
+#btn {width: 60px; height: 60px; border-radius: 60px; font-size: 26px; background-color:   #ddd; color: #fff; border: 5px solid #fff; position: relative; top: -36px; left: 50%; margin-left: -30px; transition: background-color 1s; padding: 7px;}
+#btn:focus{outline: none;}
+#btn:hover {background-color: #61cf94; cursor: pointer; box-shadow: 1px 1px 1px 1px #888888;}
 
-#main-nav {
-    z-index: 1001;
-    height: 11%;
-    padding: 1%;
-    background-color: #FFFFFF !important;
-}
-
-#formInput {
-    margin-top: 3%;
-    display: flex;
-    justify-content: center;
-}
-
-#inputChercher {
-    width: 29%;
-    height: 2.3em;
-    z-index: 100;
-}
-
-#buttonSearche {
-    margin-left: -2.9em;
-}
-
-.glyphicon-search {
-    z-index: 222;
-    color: #1F1B4C;
-}
-
-
-/*Barre de recherche */
-
-.stylish-input-group .input-group-addon {
-    background: #FFFFFF !important;
-}
-
-.stylish-input-group .form-control {
-    border-right: 0;
-    box-shadow: 0 0 0;
-    border-color: #ccc;
-    height: auto;
-}
-
-.stylish-input-group button {
-    border: 0;
-    background: transparent;
-}
-
-.linksDrop {
-    color: black;
-    font-size: 17px;
-    padding-left: 1.4em;
-}
-
-#DivDomApi {
-    margin-top: 2%;
-}
-
-@media margin {
-    -webkit-margin: 2em;
-    -moz-margin: 2em;
-    -ms-margin: 2em;
-    margin: 2em;
-}
-
-.evenement {
-    margin: 2vmin;
-    height: 71vh;
-    padding: 0;
-    font-size: 0.4vmax;
-    margin-left: -77px;
-}
-
-a {
-    color: #0088cc;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-#Api-Image {
-    height: 60vh;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-#Api-Image img {
-    height: 55vh;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-#Details {
-    height: 61vh;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-#Api-Title {
-    height: 30%;
-    margin: 0;
-    margin-top: 19px;
-    padding: 0;
-}
-
-#ApiDate-Start {
-    height: 10%;
-    margin: 0;
-    margin-top: -16px;
-    padding: 0;
-}
-
-#ApiDate-End {
-    height: 10%;
-    /*background-color: coral;*/
-    margin: 0;
-    padding: 0;
-}
-
-#Api-Adresse {
-    height: 10%;
-    margin: 0;
-    padding: 0;
-}
-
-#Api-Prix {
-    height: 10%;
-    margin: 0;
-    padding: 0;
-}
-
-#Api-Description {
-    height: 30%;
-    margin: 0;
-    padding: 0;
-}
-
-#Api-Description p {
-    font-size: 0.7vmax;
-}
-#map {
-  width: 26%;
-}
-#container-location {
-  width: auto;
-  display: flex;
-  height: 210px;
-  margin-top: 6em;
-  margin-left: 15px;
-}
-
-/*media query sur chrome*/
-
+    /*media query sur chrome*/
 @media only screen and (max-width: 568px) and (min-width:320px) {
-    .titreMesEvent {
-        font-size: 2.1em;
-       margin-top: -1.5%;
+        .titreMesEvent {font-size: 3.1em; margin-top: 33.5%;}
+        #btn-maison {display: none;}
+        #container-location {display: none;}
+        #container-api {display: block; justify-content: center; padding-top: 1px;}
+        .evenements {margin: 9.5px;}
+        body{background: none; background-color: black !important;}
+        #inputChercher {width: 15em;}
+        .logo-chat {width: 77px; height: 35px;}
     }
-    #inputChercher {
-        width: 82%;
-    }
-    #DivDomApi {
-    margin-top: 13%
-}
-    .navbar-inner {
-        margin-top: -17%;
-    }
-    h3 {
-        font-size: 16.5px !important;
-    }
-    #Api-Image img {
-        height: 47vh;
-    }
-    #Api-Image {
-        margin-top: -5em;
-        margin-left: -2em;
-    }
-    #btn-maison{
-      display: none;
-    }
-    #Api-Title {
-        margin-top: -36px;
-    }
-    #Details {
-        margin-left: -1em;
-    }
-    #container-location {
-     display: none;
-}
-}
 
 @media only screen and (max-width: 667px) and (min-width:375px) {
-    .titreMesEvent {
-        font-size: 2.5em;
-        margin-top: 1em;
+        .titreMesEvent {font-size: 3.5em; margin-top: 34.5%;}
+        .navbar-inner {margin-top: -17%;}
+        #btn-maison {display: none;}
+        #container-location {display: none;}
+        .evenements {margin-left: 3.5em;}
+        #inputChercher {width: 18em;}
+        #btn {left: 46%;}
     }
-    #DivDomApi {
-    margin-top: 7%;
-}
-    .navbar-inner {
-        margin-top: -17%;
-    }
-    #inputChercher {
-        width: 72%;
-    }
-    #Api-Image img {
-        height: 46vh;
-    }
-    #btn-maison{
-      display: none;
-    }
-    #Api-Image {
-        margin-top: -5em;
-    }
-    #Details {
-        margin-left: -1em;
-    }
-    #container-location {
-     display: none;
-}
-}
 
 @media only screen and (max-width: 736px) and (min-width:414px) {
-    .titreMesEvent {
-        font-size: 2.5em;
-        margin-top: 10.5%;
+        .titreMesEvent {font-size: 4.5em; margin-top: 27.5%;}
+        #btn-maison {display: none;}
+        #container-location {display: none;}
+        .evenements {margin-left: 5.5em;}
+        #inputChercher {width: 21em;}
+        #btn {left: 44%;}
     }
-    #inputChercher {
-        width: 64%;
-    }
-    h3 {
-        font-size: 12.5px;
-    }
-    .navbar-inner {
-        margin-top: -17%;
-    }
-    #DivDomApi {
-    margin-top: 13%;
-}
-    #ApiDate-Start {
-        margin-top: -47px;
-    }
-    #btn-maison{
-      display: none;
-    }
-
-    #Api-Image {
-        margin-top: -6em;
-    }
-    a {
-        font-size: 3em;
-    }
-    #Api-Image img {
-        height: 47vh;
-    }
-    #Api-Title {
-        margin-top: -26px;
-    }
-    #Api-Image {
-        margin-top: -7em;
-    }
-    #container-location {
-     display: none;
-}
-}
 
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
-    #inputChercher {
-        width: 56%;
-    }
-    #ApiDate-Start {
-        margin-top: -85px;
-    }
-    #Details {
-        height: 53vh;
-        margin-bottom: -15%;
-    }
-    #btn-maison{
-      display: none;
-    }
-
-    .navbar-inner {
-        margin-top: -8%;
-    }
-    h6 {
-        font-size: 13.9px;
-    }
-    a {
-        font-size: 16px;
-    }
-    #inputChercher {
-    width: 42%;
-}
-    .titreMesEvent {
-    font-size: 41px;
-    margin-top: -11.5%;
-}
-    #container-location {
-    margin-top: -0.2em;
-}
-}
+            #btn-maison {display: none;}
+            .navbar-inner {margin-top: -8%;}
+            .titreMesEvent {font-size: 41px; margin-top: -11.5%;}
+            #container-location {margin-top: -0.2em;}
+        }
 
 @media only screen and (max-width: 1366px) and (min-width:1024px) {
-    #Api-Image img {
-        height: 30vh;
-        width: 100%;
-    }
-    #Api-Image {
-        height: 34vh;
-    }
-    #Details {
-        height: 34vh;
-    }
-    #cont{
-      margin-left: -0%;
-      padding-left: 10em;
-    }
-    .navbar-inner {
-        margin-top: -5%;
-    }
-    #main-nav {
-        z-index: 1001;
-        height: 7%;
-        padding: 1%;
-        background-color: #1A1A1A;
-    }
-    .titreMesEvent {
-      font-size: 53px;
-      margin-top: -10.5%;
-    }
-    #container-location {
-    margin-top: 6.8em;
-}
-#inputChercher {
-    width: 43%;
-}
-}
+            .titreMesEvent {font-size: 61px; margin-top: 6.5%;}
+            #container-location {margin: 4em; margin-top: 0em;}
+            #form-keypress {margin-top: 2em;}
+            #inputChercher{margin-top: 0;}
+            #buttonSearche {margin-top: 8px;}
+           .navbar-collapse {padding-left: 12% !important;}
+        }
