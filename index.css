@@ -67,8 +67,10 @@ overflow: hidden; height: 22px;}
         #container-api {display: block; justify-content: center; padding-top: 1px;}
         .evenements {margin: 9.5px;}
         body{background: none; background-color: black !important;}
-        #inputChercher {width: 15em;}
+        #inputChercher {width: 19em;}
         .logo-chat {width: 77px; height: 35px;}
+        .form-control{font-size: 12px !important;}
+        #buttonSearche {margin-top: 32px;}
     }
 
 @media only screen and (max-width: 667px) and (min-width:375px) {

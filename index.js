@@ -7,8 +7,9 @@ $(document).ready(function() {
 
     // keypresse enter-input
     $("#form-keypress").submit(function(event) {
-        if ($("input:first").val() === "correct")
+        if ($("input:first").val() === "correct"){
         event.preventDefault();
+        }
     });
 
     // menu hover
@@ -39,9 +40,7 @@ $(document).ready(function() {
         var urll = apiOpenDataa + inputt.val() + roww + startt + apiPp + apiTt;
 
         $.getJSON(urll, function(json) {
-
             json.records.forEach(function(item) {
-
                 var itemContainer = $("<div class='evenements'></div>");
                 itemContainer.html(`<div class="card">
                   <div id="disc-hidden"></div>
@@ -67,6 +66,7 @@ $(document).ready(function() {
 
               itemContainer.find("#prix-api").html("Prix:" +
                     " " + item.record.fields.pricing_info);
+                    
                 var link = itemContainer.find("#link-api");
                 link.attr("href", item.record.fields.link);
 
