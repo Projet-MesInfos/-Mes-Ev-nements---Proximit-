@@ -5,9 +5,8 @@
     <title>Mes événements à proximité</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Links -->
-    <link rel="stylesheet" href="index.css" media="screen" title="no title">
+    <link rel="stylesheet" href="index.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- font google et awesome -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
@@ -17,15 +16,10 @@
     <!-- Links Menu -->
     <link href="DownloadMenuFiles/nestednav.css" rel="stylesheet">
     <link href="DownloadMenuFiles/nestednav.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <!-- Link google map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP84SyCAABKR-o5CR7ncmyqeFQMKLbwZQ&callback=initMap" async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP84SyCAABKR-o5CR7ncmyqeFQMKLbwZQ&callback=initMap" async defer></script> -->
     <!-- Links événements card -->
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="map.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 </head>
 
@@ -126,13 +120,16 @@
         </div>
         <span>
               <button id="buttonSearche" type="submit" class="glyphicon glyphicon-search"></button>
-        </span>      
+        </span>
     </form>
 
     <!-- api événements -->
     <div id="container-api" class="card-deck"></div>
 
     <!-- links -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="index.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/concert.js" type="text/javascript"></script>
     <script src="./Menu-Fichiers-Js/city.js" type="text/javascript"></script>
