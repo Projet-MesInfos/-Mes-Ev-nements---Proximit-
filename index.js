@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     // keypresse enter-input
     $("#form-keypress").submit(function(event) {
-        if ($("input:first").val() === "correct"){
+        if ($("#inputChercher").val() === "correct"){
         event.preventDefault();
         }
     });
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
               itemContainer.find("#prix-api").html("Prix:" +
                     " " + item.record.fields.pricing_info);
-                    
+
                 var link = itemContainer.find("#link-api");
                 link.attr("href", item.record.fields.link);
 
@@ -89,7 +89,6 @@ $(document).ready(function() {
         $('#inputChercher').val(general.replace(/\n/, ' '));
         fetchEvents();
     });
-});
 
 function getAddress() {
     // Initialise the cozy sdk.
@@ -132,3 +131,5 @@ function getMaifAddress() {
         return address
     });
 }
+
+});

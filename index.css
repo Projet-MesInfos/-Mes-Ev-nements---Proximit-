@@ -10,7 +10,7 @@ background-size: cover;
 .navbar-light .navbar-nav .nav-link { padding: 14px !important; color: #fff !important;
  font-size: 16px; font-family:'Roboto Slab', serif;}
 .navbar-light .navbar-nav .nav-link:hover{color: #f56a6a !important; }
-.dropdown-item { color:#1F1B4C !important; font-family:'Roboto Slab', serif; font-size: 14px;}
+.dropdown-item { color:#1F1B4C; font-family:'Roboto Slab', serif; font-size: 14px;}
 .navbar-toggler {background-color: #fff !important;}
 .dropdown-item:hover{ color: #f56a6a !important;}
 .disc-hidden { width: 290px; height: 250px; background: rgba(0, 0, 0, 0.5) !important;
@@ -55,11 +55,16 @@ margin-top: 2em; width: 32em;}
 #prix-api {font-family: 'Fjalla One', sans-serif; font-size: 1.4em; margin-bottom: 25px;
 overflow: hidden; height: 22px;}
 #prix-api:hover {box-shadow: 1px 1px 1px 1px #888888;}
-#btn {width: 60px; height: 60px; border-radius: 60px; font-size: 26px; background-color:   #ddd; color: #fff; border: 5px solid #fff; position: relative; top: -36px; left: 50%; margin-left: -30px; transition: background-color 1s; padding: 7px;}
+#btn {width: 60px; height: 60px; border-radius: 60px; font-size: 26px; background-color:   #ddd; color: #fff; border: 5px solid #fff; position: relative; top: -36px; left: 49%; margin-left: -30px; transition: background-color 1s; padding: 7px;}
 #btn:focus{outline: none;}
 #btn:hover {background-color: #61cf94; cursor: pointer; box-shadow: 1px 1px 1px 1px #888888;}
 
     /*media query sur chrome*/
+@media only screen and (max-width: 640px) and (min-width:360px) {
+      .evenements {margin-left: 30.5px !important;}
+      #btn{left: 47%;}
+    }
+
 @media only screen and (max-width: 568px) and (min-width:320px) {
         .titreMesEvent {font-size: 3.1em; margin-top: 33.5%;}
         #btn-maison {display: none;}
@@ -68,9 +73,10 @@ overflow: hidden; height: 22px;}
         .evenements {margin: 9.5px;}
         body{background: none; background-color: black !important;}
         #inputChercher {width: 19em;}
-        .logo-chat {width: 77px; height: 35px;}
+        .logo-chat {width: 70px; height: 40px;}
         .form-control{font-size: 12px !important;}
         #buttonSearche {margin-top: 32px;}
+        .dropdown-item { color:#fff !important;}
     }
 
 @media only screen and (max-width: 667px) and (min-width:375px) {
@@ -80,7 +86,9 @@ overflow: hidden; height: 22px;}
         #container-location {display: none;}
         .evenements {margin-left: 3.5em;}
         #inputChercher {width: 18em;}
+        #container-api {margin-left: 3%;}
         #btn {left: 46%;}
+        .dropdown-item { color:#fff !important;}
     }
 
 @media only screen and (max-width: 736px) and (min-width:414px) {
@@ -89,7 +97,9 @@ overflow: hidden; height: 22px;}
         #container-location {display: none;}
         .evenements {margin-left: 5.5em;}
         #inputChercher {width: 21em;}
+        #container-api {margin-left: 7%;}
         #btn {left: 44%;}
+        .dropdown-item { color:#fff !important;}
     }
 
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -97,6 +107,7 @@ overflow: hidden; height: 22px;}
             .navbar-inner {margin-top: -8%;}
             .titreMesEvent {font-size: 41px; margin-top: -11.5%;}
             #container-location {margin-top: -0.2em;}
+            .dropdown-item { color:#fff !important;}
         }
 
 @media only screen and (max-width: 1366px) and (min-width:1024px) {
