@@ -35,6 +35,7 @@ $(document).ready(function() {
     var apiTt = '&timezone=UTC';
     var inputt = $("#inputChercher");
 
+
     var fetchEvents = function() {
         containerApi.empty();
         var urll = apiOpenDataa + inputt.val() + roww + startt + apiPp + apiTt;
@@ -68,8 +69,7 @@ $(document).ready(function() {
                     " " + item.record.fields.pricing_info);
 
                 var link = itemContainer.find("#link-api");
-                link.attr("href", item.record.fields.link);
-
+                link.attr("href", item.record.fields.link.replace("event", "events"));
                 containerApi.append(itemContainer);
             });
         });
