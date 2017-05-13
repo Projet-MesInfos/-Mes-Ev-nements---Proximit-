@@ -9,7 +9,6 @@ var glob = function(json) {
             <div id="disc-hidden" class="disc-hidden"></div>
                 <img class="img-fluid image-api" id="image-api" alt="image">
                 <div class="card-block">
-                  <p id="id-card" class="id-card"></p>
                   <h4 id="title-api"></h4>
                   <p id="date-api"> </p>
                   <p id="ville-api"></p>
@@ -29,9 +28,6 @@ var glob = function(json) {
 
         itemContainer.find("#prix-api").html("Prix:" +
             " " + item.record.fields.pricing_info);
-
-        itemContainer.find("#id-card").html("id:" +
-                " " + item.record.id);
 
         var link = itemContainer.find("#link-api");
         link.attr("href", item.record.fields.link.replace("event", "events"));
