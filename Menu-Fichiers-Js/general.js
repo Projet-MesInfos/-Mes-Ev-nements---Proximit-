@@ -2,14 +2,15 @@ var containerApi = $("#container-api");
 
 // la template
 var glob = function(json) {
-  console.log(json);
+    console.log(json);
     json.records.forEach(function(item) {
         var itemContainer = $("<div class='evenements'></div>");
         itemContainer.html(`<div class="card">
             <div id="disc-hidden" class="disc-hidden"></div>
+            <div class="div_vide"> </div>
                 <img class="img-fluid image-api" id="image-api" alt="image">
                 <div class="card-block">
-                  <h4 id="title-api"></h4>
+                  <h4 class="title" id="title-api"></h4>
                   <p id="date-api"> </p>
                   <p id="ville-api"></p>
                   <p id="prix-api"> </p>
@@ -32,21 +33,20 @@ var glob = function(json) {
         var link = itemContainer.find("#link-api");
         link.attr("href", item.record.fields.link.replace("event", "events"));
 
-        itemContainer.find("#disc-hidden").html("Ville:" +
-            " " + item.record.fields.description);
+        itemContainer.find("#disc-hidden").html(item.record.fields.description);
 
         containerApi.append(itemContainer);
 
-        // $(".id-card").mouseover(function(event){
-        // $(".disc-hidden").css("display", "block");
-        // });
-        // $(".id-card").mouseout(function(){
-        // $(".disc-hidden").css("display", "none");
-        // });
+        $(".div_vide").mouseover(function(event) {
+            $(event.target.parentElement).find(".disc-hidden").css("display", "block");
+         });
+
+        $(".div_vide").mouseout(function() {
+            $(".disc-hidden").css("display", "none");
+         });
+
     });
 };
-
-
 
 // api évenements
 $("#cinemaGeneral").on("click", function() {

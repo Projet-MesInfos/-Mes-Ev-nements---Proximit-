@@ -7,8 +7,8 @@ $(document).ready(function() {
 
     // keypresse enter-input
     $("#form-keypress").submit(function(event) {
-        if ($("#inputChercher").val() === "correct"){
-        event.preventDefault();
+        if ($("#inputChercher").val() === "correct") {
+            event.preventDefault();
         }
     });
 
@@ -35,7 +35,6 @@ $(document).ready(function() {
     var apiTt = '&timezone=UTC';
     var inputt = $("#inputChercher");
 
-
     var fetchEvents = function() {
         containerApi.empty();
         var urll = apiOpenDataa + inputt.val() + roww + startt + apiPp + apiTt;
@@ -44,7 +43,8 @@ $(document).ready(function() {
             json.records.forEach(function(item) {
                 var itemContainer = $("<div class='evenements'></div>");
                 itemContainer.html(`<div class="card">
-                  <div id="disc-hidden"></div>
+                  <div id="disc-hidden" class="disc-hidden"></div>
+                    <div class="div_vide"> </div>
                 <img id="image-api" class="img-fluid" alt="image">
                 <div class="card-block">
                   <h4 id="title-api"></h4>
@@ -65,12 +65,24 @@ $(document).ready(function() {
                 itemContainer.find("#ville-api").html("Ville:" +
                     " " + item.record.fields.city);
 
-              itemContainer.find("#prix-api").html("Prix:" +
+                itemContainer.find("#prix-api").html("Prix:" +
                     " " + item.record.fields.pricing_info);
 
                 var link = itemContainer.find("#link-api");
                 link.attr("href", item.record.fields.link.replace("event", "events"));
+
+                itemContainer.find("#disc-hidden").html(item.record.fields.description);
+
                 containerApi.append(itemContainer);
+
+                $(".div_vide").mouseover(function(event) {
+                    $(event.target.parentElement).find(".disc-hidden").css("display", "block");
+                });
+
+                $(".div_vide").mouseout(function() {
+                    $(".disc-hidden").css("display", "none");
+                });
+
             });
         });
     }
@@ -90,46 +102,46 @@ $(document).ready(function() {
         fetchEvents();
     });
 
-function getAddress() {
-    // Initialise the cozy sdk.
-    cozy.client.init();
-    return getMaifAddress().catch(getEDFAddress);
-}
+    function getAddress() {
+        // Initialise the cozy sdk.
+        cozy.client.init();
+        return getMaifAddress().catch(getEDFAddress);
+    }
 
-function getEDFAddress() {
-    // create an index, for the Client doctype, on the vendor field.
-    return cozy.client.data.defineIndex('Client', ['vendor']).then(function(index) {
-        // Query the cozy database, using the previous index, to found the data.
-        return cozy.client.data.query(index, {
-            selector: {
-                vendor: 'EDF'
+    function getEDFAddress() {
+        // create an index, for the Client doctype, on the vendor field.
+        return cozy.client.data.defineIndex('Client', ['vendor']).then(function(index) {
+            // Query the cozy database, using the previous index, to found the data.
+            return cozy.client.data.query(index, {
+                selector: {
+                    vendor: 'EDF'
+                }
+            });
+        }).then(function(data) {
+            if (data.length === 0) {
+                return Promise.reject(null);
             }
+            // extract the data we need.
+            return data[0].address;
         });
-    }).then(function(data) {
-        if (data.length === 0) {
-            return Promise.reject(null);
-        }
-        // extract the data we need.
-        return data[0].address;
-    });
-}
+    }
 
-function getMaifAddress() {
-    return cozy.client.data.defineIndex('Maifuser', ['_id']).then(function(index) {
-        return cozy.client.data.query(index, {
-            selector: {
-                _id: ''
+    function getMaifAddress() {
+        return cozy.client.data.defineIndex('Maifuser', ['_id']).then(function(index) {
+            return cozy.client.data.query(index, {
+                selector: {
+                    _id: ''
+                }
+            });
+        }).then(function(data) {
+            if (data.length === 0) {
+                return Promise.reject(null);
             }
-        });
-    }).then(function(data) {
-        if (data.length === 0) {
-            return Promise.reject(null);
-        }
 
-        var address = data[0].profile.MesInfos.foyer.address;
-        // address.formated = address.street + '\n' + adress.postcode + ' ' + address.city;
-        return address
-    });
-}
+            var address = data[0].profile.MesInfos.foyer.address;
+            // address.formated = address.street + '\n' + adress.postcode + ' ' + address.city;
+            return address
+        });
+    }
 
 });
