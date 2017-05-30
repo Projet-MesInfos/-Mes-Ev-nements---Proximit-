@@ -77,6 +77,7 @@ $(document).ready(function() {
 
                 $(".div_vide").mouseover(function(event) {
                     $(event.target.parentElement).find(".disc-hidden").css("display", "block");
+                    $('.disc-hidden').addClass('animated flipInY');
                 });
 
                 $(".div_vide").mouseout(function() {
@@ -93,7 +94,7 @@ $(document).ready(function() {
 
     var address = null;
     getAddress().then(function(address) {
-        var general = "Mai" +
+        var general = "mai" +
         ' ' +
         "2017" +
         ', ' + (address.postcode || address.postCode || '') + ', ' + address.city;

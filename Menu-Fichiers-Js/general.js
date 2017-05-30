@@ -40,12 +40,10 @@ var glob = function(json) {
         $(".div_vide").mouseover(function(event) {
             $(event.target.parentElement).find(".disc-hidden").css("display", "block");
             $('.disc-hidden').addClass('animated flipInY');
-
-         });
-
+        });
         $(".div_vide").mouseout(function() {
             $(".disc-hidden").css("display", "none");
-         });
+        });
 
     });
 };

@@ -88,7 +88,7 @@ body {
 /*header*/
 
 #map {
-    width: 21%;
+    width: 92%;
 }
 
 #container-location {
@@ -97,8 +97,7 @@ body {
     justify-content: flex-start;
     height: 128px;
     margin-left: 8%;
-    margin-top: 1em;
-    visibility: hidden;
+    margin-top: 12em;
 }
 
 .titreMesEvent {
@@ -287,10 +286,7 @@ body {
     .evenements {
         margin: 9.5px;
     }
-    body {
-        background: none;
-        background-color: black !important;
-    }
+
     #inputChercher {
         width: 19em;
     }
@@ -304,9 +300,7 @@ body {
     #buttonSearche {
         margin-top: 32px;
     }
-    .dropdown-item {
-        color: #fff !important;
-    }
+
 }
 
 @media only screen and (max-width: 667px) and (min-width:375px) {
@@ -335,9 +329,7 @@ body {
     #btn {
         left: 46%;
     }
-    .dropdown-item {
-        color: #fff !important;
-    }
+
 }
 
 @media only screen and (max-width: 736px) and (min-width:414px) {
@@ -363,9 +355,7 @@ body {
     #btn {
         left: 44%;
     }
-    .dropdown-item {
-        color: #fff !important;
-    }
+
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -382,19 +372,18 @@ body {
     #container-location {
         margin-top: -0.2em;
     }
-    .dropdown-item {
-        color: #fff !important;
-    }
+
 }
 
 @media only screen and (max-width: 1366px) and (min-width:1024px) {
     .titreMesEvent {
         font-size: 61px;
-        margin-top: 6.5%;
+        margin-top: 15.5%;
     }
     #container-location {
         margin: 4em;
         margin-top: 0em;
+        display: none;
     }
     #form-keypress {
         margin-top: 2em;
