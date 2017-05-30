@@ -94,7 +94,7 @@ $(document).ready(function() {
 
     var address = null;
     getAddress().then(function(address) {
-        var general = "mai" +
+        var general = "Juin" +
         ' ' +
         "2017" +
         ', ' + (address.postcode || address.postCode || '') + ', ' + address.city;
