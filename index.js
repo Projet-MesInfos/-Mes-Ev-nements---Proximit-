@@ -5,6 +5,13 @@ $(document).ready(function() {
         window.location.reload();
     });
 
+    //  preloader
+    $(window).on('load', function() {
+           $('#wrap').fadeOut();
+           $('#preloader').delay(350).fadeOut('slow');
+           $('body').delay(350).css({'overflow':'visible'});
+         });
+
     // keypresse enter-input
     $("#form-keypress").submit(function(event) {
         if ($("#inputChercher").val() === "correct") {
@@ -27,9 +34,8 @@ $(document).ready(function() {
     var containerApi = $("#container-api");
 
     // api dans l'input et les paramettres
-
     var apiOpenDataa = 'https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-cibul/records?q=';
-    var roww = '&rows=100';
+    var roww = '&rows=20';
     var startt = '&start=2';
     var apiPp = '&pretty=false';
     var apiTt = '&timezone=UTC';
