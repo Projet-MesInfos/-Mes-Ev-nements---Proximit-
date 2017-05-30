@@ -4,7 +4,6 @@ body {
     height: 105vh;
 }
 
-
 /*navbar*/
 
 .bg-faded {
@@ -97,7 +96,18 @@ body {
     justify-content: flex-start;
     height: 128px;
     margin-left: 8%;
-    margin-top: 12em;
+    margin-top: 11em;
+}
+
+down vote
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
 }
 
 .titreMesEvent {
